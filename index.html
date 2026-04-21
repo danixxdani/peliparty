@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PeliParty</title>
 <style>
+
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{background:#111;display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:40px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
 .device-wrap{display:flex;gap:48px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
@@ -170,8 +171,78 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
 .idiv{height:.5px;background:rgba(255,255,255,0.1);margin:12px 0}
 .ileg{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .isw{width:14px;height:14px;border-radius:4px;flex-shrink:0}
-</style>
 
+
+  /* BANNER CAROUSEL */
+  .banner-carousel{margin:0 0 0;position:relative;overflow:hidden;flex-shrink:0}
+  .banner-track{display:flex;transition:transform .35s ease;height:210px}
+  .banner-slide{min-width:100%;position:relative;cursor:pointer;flex-shrink:0;overflow:hidden}
+  .banner-iframe{width:100%;height:100%;border:none;display:block;pointer-events:none;position:absolute;inset:0}
+  .banner-static{position:absolute;inset:0}
+  .banner-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,rgba(0,0,0,0.1) 55%,transparent 100%);padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
+  .banner-top{display:flex;justify-content:space-between;align-items:flex-start}
+  .banner-movie{font-size:18px;font-weight:700;color:#fff;margin-bottom:5px}
+  .banner-hosts-row{display:flex;align-items:center;gap:5px;margin-bottom:10px}
+  .banner-dots{display:flex;gap:6px;justify-content:center;padding:8px 0 6px;background:#0d0d0d}
+  .bdot{width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,0.2);cursor:pointer;transition:all .2s}
+  .bdot.on{background:#fff;width:18px}
+
+  /* STATIC THUMB */
+  .ethumb-static{overflow:hidden;position:relative;height:80px}
+  .ethumb-static img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+
+  /* RANK */
+  .rank-num{position:absolute;top:5px;left:7px;font-size:20px;font-weight:700;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,0.9);z-index:2;line-height:1}
+
+  /* LIVE PIP */
+  .live-pip{position:absolute;top:6px;left:7px;background:#E24B4A;color:#fff;font-size:8px;font-weight:600;padding:2px 6px;border-radius:99px;display:inline-flex;align-items:center;gap:3px;z-index:2}
+
+  /* HOST CHIP sub */
+  .hchip-sub{font-size:9px;color:rgba(255,255,255,0.35);text-align:center;margin-top:-2px}
+
+  /* TRENDING CLIPS — vertical 9:16 */
+  .clips-row{display:flex;gap:10px;padding:0 16px 16px;overflow-x:auto}
+  .clips-row::-webkit-scrollbar{display:none}
+  .clip-card{flex-shrink:0;width:100px;cursor:pointer}
+  .clip-thumb{height:178px;border-radius:12px;overflow:hidden;position:relative;background:#1a1a1a}
+  .clip-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .clip-play-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.15)}
+  .clip-play-btn svg{filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
+  .clip-duration{position:absolute;bottom:6px;right:7px;background:rgba(0,0,0,0.65);color:#fff;font-size:9px;padding:1px 5px;border-radius:4px}
+  .clip-info{padding:5px 2px 0}
+  .clip-title{font-size:10px;font-weight:500;color:#fff;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .clip-views{font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px}
+
+  /* POSTERS */
+  .poster-row{display:flex;gap:10px;padding:0 16px 16px;overflow-x:auto}
+  .poster-row::-webkit-scrollbar{display:none}
+  .poster-card{flex-shrink:0;width:88px;cursor:pointer}
+  .poster-img{height:128px;border-radius:10px;overflow:hidden;background:#1a1a1a;position:relative;margin-bottom:5px}
+  .poster-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .poster-title{font-size:10px;font-weight:500;color:rgba(255,255,255,0.85);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+  .poster-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .ethumb-static img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0}
+
+  .bell-btn{position:absolute;bottom:8px;right:7px;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s;z-index:3}
+  .bell-btn:hover{background:rgba(55,138,221,0.8)}
+  .bell-btn.active{background:#378ADD;border-color:#378ADD}
+  .bell-btn svg{flex-shrink:0}
+
+  .genre-grid-row{display:flex;gap:10px;padding:0 16px 16px;overflow-x:auto}
+  .genre-grid-row::-webkit-scrollbar{display:none}
+  .genre-tile{flex-shrink:0;width:110px;cursor:pointer;border-radius:12px;overflow:hidden;position:relative}
+  .genre-tile-bg{height:110px;border-radius:12px;position:relative;overflow:hidden}
+  .genre-tile-label{position:absolute;bottom:8px;left:8px;font-size:12px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,0.6)}
+  .genre-tile-count{display:none}
+  .genre-live-dot{position:absolute;top:8px;left:8px;width:7px;height:7px;border-radius:50%;background:#E24B4A;display:flex;align-items:center;justify-content:center}
+  .genre-live-badge{position:absolute;top:6px;left:6px;background:rgba(0,0,0,0.55);border-radius:6px;padding:2px 6px;display:flex;align-items:center;gap:4px;font-size:9px;color:#fff;font-weight:500}
+  .genre-live-badge-dot{width:5px;height:5px;border-radius:50%;background:#E24B4A}
+  .coming-date{position:absolute;top:0;left:0;right:0;text-align:center;font-size:9px;font-weight:600;color:#fff;background:rgba(0,0,0,0.6);padding:3px 0;border-radius:0}
+  .remind-btn{margin-top:5px;background:rgba(255,255,255,0.09);border:0.5px solid rgba(255,255,255,0.18);border-radius:6px;padding:4px 0;font-size:9px;color:rgba(255,255,255,0.65);text-align:center;cursor:pointer;transition:background .15s}
+  .remind-btn:active{background:rgba(255,255,255,0.18)}
+
+</style>
 </head>
 <body>
 <div class="device-wrap">
@@ -179,225 +250,216 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
 <div class="phone">
   <div class="sbar"><span>9:41</span><span>●●● 100%</span></div>
 
-  <!-- ═══ MAIN ═══ -->
+  <!-- MAIN SCREEN -->
   <div class="screen active" id="screen-main">
     <div class="main-scroll">
-
       <div class="main-header">
         <div class="logo">Peli<span>Party</span></div>
-        <div class="notif-btn">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6v3L2 11h12l-1.5-2V6C12.5 3.5 10.5 1.5 8 1.5z" stroke="rgba(255,255,255,0.55)" stroke-width="1.3" fill="none"/>
-            <circle cx="8" cy="13.5" r="1" fill="rgba(255,255,255,0.55)"/>
-          </svg>
-        </div>
+        <img src="https://i.pravatar.cc/60?img=47" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.2);cursor:pointer">
       </div>
 
-      <!-- Hero -->
-      <div class="hero" onclick="enterWatch(0)">
-        <iframe class="hero-iframe" id="hero-iframe" src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=0&start=30&rel=0&disablekb=1&fs=0&iv_load_policy=3" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <div class="play-overlay hidden" id="hero-play" onclick="event.stopPropagation();heroPlay()">
-          <div class="play-circle"><div class="play-tri"></div></div>
-        </div>
-        <div class="hero-overlay">
-          <div class="hero-top">
-            <div class="live-badge"><div class="live-dot"></div>LIVE NOW</div>
-            <div class="viewer-pill">1,247</div>
-          </div>
-          <div>
-            <div class="hero-movie">Cidade de Deus</div>
-            <div class="hero-hosts-row">
-              <img class="h-av-img" src="https://i.pravatar.cc/40?img=47" alt="IS">
-              <img class="h-av-img" src="https://i.pravatar.cc/40?img=11" alt="PV">
-              <img class="h-av-img" src="https://i.pravatar.cc/40?img=32" alt="SL">
-              <div class="hero-host-txt">Isabela · Pablo · Sara</div>
+      <!-- ① LIVE BANNER CAROUSEL -->
+      <div class="banner-carousel">
+        <div class="banner-track" id="banner-track">
+          <div class="banner-slide" onclick="enterWatch(0)">
+            <iframe class="banner-iframe" src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=30" allow="autoplay; encrypted-media"></iframe>
+            <div class="banner-overlay">
+              <div class="banner-top"><div class="live-badge"><div class="live-dot"></div>LIVE</div><div class="viewer-pill">1,247 watching</div></div>
+              <div>
+                <div class="banner-movie">Cidade de Deus</div>
+                <div class="banner-hosts-row"><img class="h-av-img" src="https://i.pravatar.cc/40?img=47" alt=""><img class="h-av-img" src="https://i.pravatar.cc/40?img=11" alt=""><img class="h-av-img" src="https://i.pravatar.cc/40?img=32" alt=""><div class="hero-host-txt">Isabela · Pablo · Sara</div></div>
+                <div class="join-btn" onclick="event.stopPropagation();enterWatch(0)">Join Now</div>
+              </div>
             </div>
-            <div class="join-btn" onclick="event.stopPropagation();enterWatch(0)">Join Now</div>
+          </div>
+          <div class="banner-slide" onclick="enterWatch(1)">
+            <div class="banner-static" style="background:linear-gradient(160deg,#1a0808,#2a1010)"></div>
+            <div class="banner-overlay">
+              <div class="banner-top"><div class="live-badge" style="background:#3B6D11">NEXT UP</div><div class="viewer-pill">Tonight 9pm</div></div>
+              <div>
+                <div class="banner-movie">Tropa de Elite</div>
+                <div class="banner-hosts-row"><img class="h-av-img" src="https://i.pravatar.cc/40?img=11" alt=""><img class="h-av-img" src="https://i.pravatar.cc/40?img=5" alt=""><div class="hero-host-txt">Pablo · Diego</div></div>
+                <div class="join-btn" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3)">Set Reminder</div>
+              </div>
+            </div>
+          </div>
+          <div class="banner-slide" onclick="enterWatch(2)">
+            <div class="banner-static" style="background:linear-gradient(160deg,#1a1a2a,#0a0a1a)"></div>
+            <div class="banner-overlay">
+              <div class="banner-top"><div class="live-badge" style="background:#534AB7">SAT SPECIAL</div><div class="viewer-pill">Sat 9pm</div></div>
+              <div>
+                <div class="banner-movie">Brazil Noir Week</div>
+                <div class="banner-hosts-row"><img class="h-av-img" src="https://i.pravatar.cc/40?img=47" alt=""><img class="h-av-img" src="https://i.pravatar.cc/40?img=11" alt=""><div class="hero-host-txt">Isabela · Pablo + 3 directors</div></div>
+                <div class="join-btn" style="background:#534AB7">Reserve Seat</div>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="banner-dots"><div class="bdot on" onclick="goSlide(0)"></div><div class="bdot" onclick="goSlide(1)"></div><div class="bdot" onclick="goSlide(2)"></div></div>
       </div>
 
-      <!-- Genre -->
-      <div class="genre-row">
-        <div class="gpill on">All</div><div class="gpill">Drama</div><div class="gpill">Comedy</div>
-        <div class="gpill">Horror</div><div class="gpill">Docs</div><div class="gpill">K-Drama</div><div class="gpill">Anime</div>
-      </div>
-
-      <!-- Live hosts -->
-      <div class="sec-head"><div class="sec-title">Hosts Live Now</div></div>
-      <div class="host-scroll">
-        <div class="hchip" onclick="enterWatch(0)">
-          <div class="hchip-wrap"><img class="hchip-img ring" src="https://i.pravatar.cc/80?img=47" alt="Isabela"><div class="hchip-live"></div></div>
-          <div class="hchip-name">Isabela</div>
-        </div>
-        <div class="hchip" onclick="enterWatch(0)">
-          <div class="hchip-wrap"><img class="hchip-img ring" src="https://i.pravatar.cc/80?img=11" alt="Pablo"><div class="hchip-live"></div></div>
-          <div class="hchip-name">Pablo</div>
-        </div>
-        <div class="hchip">
-          <div class="hchip-wrap"><img class="hchip-img" src="https://i.pravatar.cc/80?img=32" alt="Sara"></div>
-          <div class="hchip-name">Sara</div>
-        </div>
-        <div class="hchip">
-          <div class="hchip-wrap"><img class="hchip-img" src="https://i.pravatar.cc/80?img=5" alt="Diego"></div>
-          <div class="hchip-name">Diego</div>
-        </div>
-        <div class="hchip">
-          <div class="hchip-wrap"><img class="hchip-img" src="https://i.pravatar.cc/80?img=20" alt="Camila"></div>
-          <div class="hchip-name">Camila</div>
-        </div>
-        <div class="hchip">
-          <div class="hchip-wrap"><img class="hchip-img" src="https://i.pravatar.cc/80?img=15" alt="Mateo"></div>
-          <div class="hchip-name">Mateo</div>
-        </div>
-      </div>
-
-      <div class="sec-divider"></div>
-
-      <!-- Today's screenings -->
-      <div class="sec-head"><div class="sec-title">On Today</div><div class="sec-more">See all</div></div>
+      <!-- ② ON TODAY -->
+      <div class="sec-head" style="margin-top:14px"><div class="sec-title">On Today</div><div class="sec-more">See all</div></div>
       <div class="cards-row">
-
         <div class="ecard" onclick="enterWatch(1)">
-          <div class="ethumb">
-            <iframe id="thumb-1" src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=ya8blp8zs_w&disablekb=1&fs=0&iv_load_policy=3&start=15" allow="autoplay; encrypted-media"></iframe>
-            <div class="play-overlay hidden" id="tplay-1" onclick="event.stopPropagation();thumbPlay(1,'ya8blp8zs_w')">
-              <div class="sm-circle"><div class="sm-tri"></div></div>
-            </div>
-            <div class="etime-b">9pm</div><div class="efree-b">FREE</div>
-          </div>
-          <div class="einfo">
-            <div class="etitle">Tropa de Elite</div>
-            <div class="esub">Pablo + Sociologist</div>
-            <div class="eavs">
-              <img class="eav-img" src="https://i.pravatar.cc/30?img=11" alt="">
-              <img class="eav-img" src="https://i.pravatar.cc/30?img=5" alt="">
-            </div>
-          </div>
+          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">9:00 PM</div><div class="efree-b">FREE</div></div>
+          <div class="einfo"><div class="etitle">Tropa de Elite</div><div class="esub">Pablo + Sociologist</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=11" alt=""><img class="eav-img" src="https://i.pravatar.cc/30?img=5" alt=""></div></div>
         </div>
-
         <div class="ecard" onclick="enterWatch(2)">
-          <div class="ethumb">
-            <iframe id="thumb-2" src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=GDv8Iei3h4Y&disablekb=1&fs=0&iv_load_policy=3&start=10" allow="autoplay; encrypted-media"></iframe>
-            <div class="play-overlay hidden" id="tplay-2" onclick="event.stopPropagation();thumbPlay(2,'GDv8Iei3h4Y')">
-              <div class="sm-circle"><div class="sm-tri"></div></div>
-            </div>
-            <div class="etime-b">10:30pm</div>
-          </div>
-          <div class="einfo">
-            <div class="etitle">Y Tu Mamá También</div>
-            <div class="esub">@agustineme</div>
-            <div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=20" alt=""></div>
-          </div>
+          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=20" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">10:30 PM</div></div>
+          <div class="einfo"><div class="etitle">Y Tu Mamá También</div><div class="esub">@agustineme</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=20" alt=""></div></div>
         </div>
-
         <div class="ecard" onclick="enterWatch(3)">
-          <div class="ethumb">
-            <iframe id="thumb-3" src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=qPDpS9SlzQ0&disablekb=1&fs=0&iv_load_policy=3&start=20" allow="autoplay; encrypted-media"></iframe>
-            <div class="play-overlay hidden" id="tplay-3" onclick="event.stopPropagation();thumbPlay(3,'qPDpS9SlzQ0')">
-              <div class="sm-circle"><div class="sm-tri"></div></div>
-            </div>
-            <div class="etime-b">Tomorrow 8pm</div>
-          </div>
-          <div class="einfo">
-            <div class="etitle">Parasite</div>
-            <div class="esub">3 Film Critics</div>
-            <div class="eavs">
-              <img class="eav-img" src="https://i.pravatar.cc/30?img=15" alt="">
-              <img class="eav-img" src="https://i.pravatar.cc/30?img=47" alt="">
-            </div>
-          </div>
+          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=15" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">Tomorrow 8pm</div></div>
+          <div class="einfo"><div class="etitle">Parasite</div><div class="esub">3 Film Critics</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=15" alt=""><img class="eav-img" src="https://i.pravatar.cc/30?img=47" alt=""></div></div>
         </div>
-
-        <div class="ecard" onclick="enterWatch(4)">
-          <div class="ethumb">
-            <iframe id="thumb-4" src="https://www.youtube.com/embed/O9LLiJDZNU0?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=O9LLiJDZNU0&disablekb=1&fs=0&iv_load_policy=3&start=8" allow="autoplay; encrypted-media"></iframe>
-            <div class="play-overlay hidden" id="tplay-4" onclick="event.stopPropagation();thumbPlay(4,'O9LLiJDZNU0')">
-              <div class="sm-circle"><div class="sm-tri"></div></div>
-            </div>
-            <div class="etime-b">Tomorrow 10pm</div>
-          </div>
-          <div class="einfo">
-            <div class="etitle">Replay #4</div>
-            <div class="esub">847 viewers</div>
-            <div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=32" alt=""></div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="sec-divider"></div>
-
-      <!-- Special events -->
-      <div class="sec-head"><div class="sec-title">Special Events This Week</div></div>
-      <div class="wide-card" onclick="enterWatch(1)">
-        <iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=ya8blp8zs_w&disablekb=1&fs=0&start=40" allow="autoplay; encrypted-media"></iframe>
-        <div class="wide-ov">
-          <div class="wide-tag">SAT SPECIAL</div>
-          <div class="wide-title">Brazil Noir Week</div>
-          <div class="wide-sub">Isabela + Pablo + 3 directors</div>
-          <div class="wide-btn">Reserve</div>
-        </div>
-      </div>
-      <div class="wide-card" style="margin-top:8px" onclick="enterWatch(2)">
-        <iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=GDv8Iei3h4Y&disablekb=1&fs=0&start=25" allow="autoplay; encrypted-media"></iframe>
-        <div class="wide-ov">
-          <div class="wide-tag">MEX CLASSIC</div>
-          <div class="wide-title">Alfonso Cuarón Special</div>
-          <div class="wide-sub">4 critics deep-dive session</div>
-          <div class="wide-btn g">Free to join</div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/O9LLiJDZNU0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">Tomorrow 10pm</div></div>
+          <div class="einfo"><div class="etitle">Wild Tales</div><div class="esub">Sara + Guest</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=32" alt=""></div></div>
         </div>
       </div>
 
       <div class="sec-divider"></div>
 
-      <!-- Browse by genre -->
-      <div class="sec-head"><div class="sec-title">Browse by Genre</div></div>
-      <div class="cat-grid">
-        <div class="cat-card" onclick="enterWatch(0)">
-          <iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=BjA995dP_60&disablekb=1&fs=0&start=60" allow="autoplay; encrypted-media"></iframe>
-          <div class="cat-ov"><div class="cat-label">Drama</div></div>
-        </div>
-        <div class="cat-card" onclick="enterWatch(3)">
-          <iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=qPDpS9SlzQ0&disablekb=1&fs=0&start=35" allow="autoplay; encrypted-media"></iframe>
-          <div class="cat-ov"><div class="cat-label">Thriller</div></div>
-        </div>
-        <div class="cat-card" onclick="enterWatch(4)">
-          <iframe src="https://www.youtube.com/embed/O9LLiJDZNU0?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=O9LLiJDZNU0&disablekb=1&fs=0&start=15" allow="autoplay; encrypted-media"></iframe>
-          <div class="cat-ov"><div class="cat-label">Docs</div></div>
-        </div>
-        <div class="cat-card" onclick="enterWatch(2)">
-          <iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=GDv8Iei3h4Y&disablekb=1&fs=0&start=50" allow="autoplay; encrypted-media"></iframe>
-          <div class="cat-ov"><div class="cat-label">Romance</div></div>
-        </div>
-      </div>
-
-      <div class="sec-divider"></div>
-
-      <!-- Replay -->
-      <div class="sec-head"><div class="sec-title">Replays</div><div class="sec-more">See all</div></div>
-      <div class="cards-row" style="padding-bottom:20px">
-        <div class="ecard" onclick="enterWatch(4)">
-          <div class="ethumb">
-            <iframe src="https://www.youtube.com/embed/O9LLiJDZNU0?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=O9LLiJDZNU0&disablekb=1&fs=0&start=22" allow="autoplay; encrypted-media"></iframe>
-          </div>
-          <div class="einfo"><div class="etitle">Last Night's Show</div><div class="esub">623 viewers</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=15" alt=""></div></div>
-        </div>
+      <!-- ③ CROWD FAVORITES -->
+      <div class="sec-head"><div class="sec-title">Crowd Favorites</div><div class="sec-more">See all</div></div>
+      <div class="cards-row">
         <div class="ecard" onclick="enterWatch(0)">
-          <div class="ethumb">
-            <iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=BjA995dP_60&disablekb=1&fs=0&start=80" allow="autoplay; encrypted-media"></iframe>
-          </div>
-          <div class="einfo"><div class="etitle">3 Days Ago</div><div class="esub">1,104 viewers</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=47" alt=""><img class="eav-img" src="https://i.pravatar.cc/30?img=11" alt=""></div></div>
+          <div class="ethumb ethumb-static" style="background:#0C1A2A"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=15" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#1</div></div>
+          <div class="einfo"><div class="etitle">Cidade de Deus</div><div class="esub" style="color:#EF9F27;font-weight:500">24,831 viewers</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=47" alt=""><img class="eav-img" src="https://i.pravatar.cc/30?img=11" alt=""></div></div>
         </div>
         <div class="ecard" onclick="enterWatch(3)">
-          <div class="ethumb">
-            <iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=qPDpS9SlzQ0&disablekb=1&fs=0&start=55" allow="autoplay; encrypted-media"></iframe>
-          </div>
-          <div class="einfo"><div class="etitle">Last Week Top</div><div class="esub">2,341 viewers</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=20" alt=""><img class="eav-img" src="https://i.pravatar.cc/30?img=32" alt=""></div></div>
+          <div class="ethumb ethumb-static" style="background:#1A0C2A"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=15" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#2</div></div>
+          <div class="einfo"><div class="etitle">Parasite</div><div class="esub" style="color:#EF9F27;font-weight:500">18,204 viewers</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=15" alt=""></div></div>
+        </div>
+        <div class="ecard" onclick="enterWatch(1)">
+          <div class="ethumb ethumb-static" style="background:#2A0C0C"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#3</div></div>
+          <div class="einfo"><div class="etitle">Tropa de Elite</div><div class="esub" style="color:#EF9F27;font-weight:500">12,547 viewers</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=11" alt=""></div></div>
+        </div>
+        <div class="ecard" onclick="enterWatch(2)">
+          <div class="ethumb ethumb-static" style="background:#0C2A0C"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=20" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#4</div></div>
+          <div class="einfo"><div class="etitle">Y Tu Mamá También</div><div class="esub" style="color:#EF9F27;font-weight:500">9,103 viewers</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=20" alt=""></div></div>
         </div>
       </div>
 
-    </div><!-- /main-scroll -->
+      <div class="sec-divider"></div>
+
+      <!-- ④ HOSTED BY -->
+      <div class="sec-head"><div class="sec-title">Hosted By</div><div class="sec-more">See all</div></div>
+      <div class="host-scroll">
+        <div class="hchip" onclick="enterWatch(0)"><div class="hchip-wrap"><img class="hchip-img ring" src="https://i.pravatar.cc/80?img=47" alt=""><div class="hchip-live"></div></div><div class="hchip-name">Isabela</div><div class="hchip-sub">LIVE</div></div>
+        <div class="hchip" onclick="enterWatch(0)"><div class="hchip-wrap"><img class="hchip-img ring" src="https://i.pravatar.cc/80?img=11" alt=""><div class="hchip-live"></div></div><div class="hchip-name">Pablo</div><div class="hchip-sub">LIVE</div></div>
+        <div class="hchip"><div class="hchip-wrap"><img class="hchip-img" src="https://i.pravatar.cc/80?img=32" alt=""></div><div class="hchip-name">Sara</div><div class="hchip-sub">2h ago</div></div>
+        <div class="hchip"><div class="hchip-wrap"><img class="hchip-img" src="https://i.pravatar.cc/80?img=5" alt=""></div><div class="hchip-name">Diego</div><div class="hchip-sub">5h ago</div></div>
+        <div class="hchip"><div class="hchip-wrap"><img class="hchip-img" src="https://i.pravatar.cc/80?img=20" alt=""></div><div class="hchip-name">Camila</div><div class="hchip-sub">Yesterday</div></div>
+        <div class="hchip"><div class="hchip-wrap"><img class="hchip-img" src="https://i.pravatar.cc/80?img=15" alt=""></div><div class="hchip-name">Mateo</div><div class="hchip-sub">Yesterday</div></div>
+      </div>
+
+      <div class="sec-divider"></div>
+
+      <!-- ⑤ JUST CHATTING -->
+      <div class="sec-head"><div class="sec-title">Just Chatting</div><div class="sec-more">See all</div></div>
+      <div class="cards-row">
+        <div class="ecard">
+          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div></div>
+          <div class="einfo"><div class="etitle">Isabela B.</div><div class="esub">Talking K-dramas</div><div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px">892 viewers</div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=20" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div></div>
+          <div class="einfo"><div class="etitle">Pablo V.</div><div class="esub">Best of 2024 films</div><div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px">541 viewers</div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=15" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div></div>
+          <div class="einfo"><div class="etitle">Camila R.</div><div class="esub">Movie recs for tonight</div><div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px">318 viewers</div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/O9LLiJDZNU0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div></div>
+          <div class="einfo"><div class="etitle">Diego M.</div><div class="esub">Squid Game S2 thoughts</div><div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px">204 viewers</div></div>
+        </div>
+      </div>
+
+      <div class="sec-divider"></div>
+
+      <!-- ⑥ GENRES -->
+      <div class="sec-head"><div class="sec-title">Browse by Genre</div><div class="sec-more">See all</div></div>
+      <div class="genre-grid-row">
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#0C2A4A,#185FA5)"><div class="genre-tile-label">Drama</div>
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>12 live</div>
+          </div>
+        </div>
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#2A0C0C,#993C1D)"><div class="genre-tile-label">Thriller</div>
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>8 live</div>
+          </div>
+        </div>
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#0C2A18,#1D9E75)"><div class="genre-tile-label">Comedy</div>
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>5 live</div>
+          </div>
+        </div>
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#26215C,#7F77DD)"><div class="genre-tile-label">K-Drama</div>
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>14 live</div>
+          </div>
+        </div>
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#2A1A0C,#BA7517)"><div class="genre-tile-label">Docs</div>
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>3 live</div>
+          </div>
+        </div>
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#2A0C1A,#D4537E)"><div class="genre-tile-label">Horror</div>
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>6 live</div>
+          </div>
+        </div>
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#0C1A2A,#5DCAA5)"><div class="genre-tile-label">Anime</div>
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>9 live</div>
+          </div>
+        </div>
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#1A2A0C,#639922)"><div class="genre-tile-label">Romance</div>
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>2 live</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-divider"></div>
+
+      <!-- ⑦ TRENDING CLIPS -->
+      <div class="sec-head"><div class="sec-title">Trending Clips</div><div class="sec-more">See all</div></div>
+      <div class="clips-row">
+        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=47" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:47</div></div><div class="clip-info"><div class="clip-title">Isabela loses it at this scene</div><div class="clip-views">128K views</div></div></div>
+        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=11" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">1:02</div></div><div class="clip-info"><div class="clip-title">Pablo's take on the ending</div><div class="clip-views">94K views</div></div></div>
+        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=32" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:33</div></div><div class="clip-info"><div class="clip-title">Chat goes wild — 1,200 reacting</div><div class="clip-views">71K views</div></div></div>
+        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=20" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:58</div></div><div class="clip-info"><div class="clip-title">First timer vs 10x watcher</div><div class="clip-views">55K views</div></div></div>
+        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=15" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">1:14</div></div><div class="clip-info"><div class="clip-title">That twist no one saw coming</div><div class="clip-views">43K views</div></div></div>
+      </div>
+
+      <div class="sec-divider"></div>
+
+      <!-- ⑧ MOVIES -->
+      <div class="sec-head"><div class="sec-title">Movies</div><div class="sec-more">See all</div></div>
+      <div class="poster-row">
+        <div class="poster-card" onclick="enterWatch(0)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201809/2/9/295774279a25728a1aba34ad90cab6ef.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Cidade de Deus</div></div>
+        <div class="poster-card" onclick="enterWatch(1)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=peliplat/default/20230330/190efd4791709a8b321584a03000e458.jpeg&source=s3-peliplat&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Tropa de Elite</div></div>
+        <div class="poster-card" onclick="enterWatch(2)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201903/1/0/106d6b5ca0a87ee01290896f91d825be.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Y Tu Mamá También</div></div>
+        <div class="poster-card" onclick="enterWatch(3)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/202008/d/a/da74b18f3e3d48f3b04f178488c9292a.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Parasite</div></div>
+        <div class="poster-card" onclick="enterWatch(4)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201912/5/6/5663a8ff57aba15eb349b4fa6b48b611.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Wild Tales</div></div>
+        <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201810/7/e/7e531ff9258febff0fa872887096e72c.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Roma</div></div>
+      </div>
+
+      <div class="sec-divider"></div>
+
+      <!-- ⑨ COMING SOON -->
+      <div class="sec-head"><div class="sec-title">Coming Soon</div><div class="sec-more">See all</div></div>
+      <div class="poster-row" style="padding-bottom:20px">
+        <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201809/2/9/295774279a25728a1aba34ad90cab6ef.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="coming-date">Apr 28</div></div><div class="poster-title">Squid Game S2</div></div>
+        <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=peliplat/default/20230330/190efd4791709a8b321584a03000e458.jpeg&source=s3-peliplat&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="coming-date">May 3</div></div><div class="poster-title">El Secreto de Sus Ojos</div></div>
+        <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201903/1/0/106d6b5ca0a87ee01290896f91d825be.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="coming-date">May 10</div></div><div class="poster-title">Nosso Lar</div></div>
+        <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/202008/d/a/da74b18f3e3d48f3b04f178488c9292a.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="coming-date">May 17</div></div><div class="poster-title">Amores Perros</div></div>
+    </div>
 
     <div class="nav-bar">
       <div class="nitem"><div class="nicon on"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="6" height="6" rx="1.5" fill="#378ADD"/><rect x="10" y="2" width="6" height="6" rx="1.5" fill="#378ADD"/><rect x="2" y="10" width="6" height="6" rx="1.5" fill="#378ADD"/><rect x="10" y="10" width="6" height="6" rx="1.5" fill="#378ADD"/></svg></div><div class="nlabel on">Home</div></div>
@@ -407,7 +469,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
     </div>
   </div>
 
-  <!-- ═══ WATCH ═══ -->
+  
+  </div>
+
   <div class="screen" id="screen-watch">
     <div class="watch-header">
       <div class="back-btn" onclick="exitWatch()"><div class="back-arr"></div><span>Back</span></div>
@@ -435,7 +499,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="hslot">
         <div class="hcam cam-on" id="hcam-0">
           <div class="av-lay"><img class="hav-img" src="https://i.pravatar.cc/80?img=47" alt="IS"></div>
-          <div class="vid-lay"><iframe src="https://www.youtube.com/embed/m1KTlMlr7UE?autoplay=1&mute=1&controls=0&loop=1&playlist=m1KTlMlr7UE&rel=0&disablekb=1&fs=0" allow="autoplay; encrypted-media"></iframe></div>
+          <div class="vid-lay"><iframe src="https://www.youtube.com/embed/m1KTlMlr7UE?autoplay=1&mute=1&controls=1&rel=0" allow="autoplay; encrypted-media"></iframe></div>
           <div class="sbars"><div class="sb" style="height:4px"></div><div class="sb" style="height:7px"></div><div class="sb" style="height:3px"></div><div class="sb" style="height:8px"></div><div class="sb" style="height:5px"></div></div>
         </div>
         <div class="hname" id="hname-0">Isabela</div>
@@ -443,7 +507,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="hslot">
         <div class="hcam cam-on" id="hcam-1">
           <div class="av-lay"><img class="hav-img" src="https://i.pravatar.cc/80?img=11" alt="PV"></div>
-          <div class="vid-lay"><iframe src="https://www.youtube.com/embed/eIfP_cBv4zY?autoplay=1&mute=1&controls=0&loop=1&playlist=eIfP_cBv4zY&rel=0&disablekb=1&fs=0" allow="autoplay; encrypted-media"></iframe></div>
+          <div class="vid-lay"><iframe src="https://www.youtube.com/embed/eIfP_cBv4zY?autoplay=1&mute=1&controls=1&rel=0" allow="autoplay; encrypted-media"></iframe></div>
           <div class="sbars"><div class="sb" style="height:6px"></div><div class="sb" style="height:4px"></div><div class="sb" style="height:9px"></div><div class="sb" style="height:5px"></div><div class="sb" style="height:7px"></div></div>
         </div>
         <div class="hname" id="hname-1">Pablo</div>
@@ -451,7 +515,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="hslot">
         <div class="hcam" id="hcam-2">
           <div class="av-lay"><img class="hav-img" src="https://i.pravatar.cc/80?img=32" alt="SL"></div>
-          <div class="vid-lay"><iframe src="https://www.youtube.com/embed/1pdg022FYEk?autoplay=1&mute=1&controls=0&loop=1&playlist=1pdg022FYEk&rel=0&disablekb=1&fs=0" allow="autoplay; encrypted-media"></iframe></div>
+          <div class="vid-lay"><iframe src="https://www.youtube.com/embed/1pdg022FYEk?autoplay=1&mute=1&controls=1&rel=0" allow="autoplay; encrypted-media"></iframe></div>
           <div class="sbars"><div class="sb" style="height:5px"></div><div class="sb" style="height:8px"></div><div class="sb" style="height:4px"></div><div class="sb" style="height:7px"></div><div class="sb" style="height:6px"></div></div>
         </div>
         <div class="hname" id="hname-2">Sara</div>
@@ -470,7 +534,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
     </div>
   </div>
 
-</div><!-- /phone -->
+</div>
 
 <div class="info-panel">
   <h3>PeliParty Prototype</h3>
@@ -519,8 +583,8 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
 
 </div>
 
-
 <script>
+
 
 const movies=[
   {id:'BjA995dP_60',title:'Cidade de Deus'},
@@ -607,7 +671,7 @@ function enterWatch(idx){
   const mv=movies[idx]||movies[0];
   document.getElementById('watch-title').textContent=mv.title;
   document.getElementById('movie-iframe').src=
-    `https://www.youtube.com/embed/${mv.id}?autoplay=1&mute=0&controls=0&rel=0&start=10&disablekb=1&fs=0&iv_load_policy=3`;
+    `https://www.youtube.com/embed/${mv.id}?autoplay=1&controls=1&rel=0&start=10`;
   document.getElementById('movie-play').classList.add('hidden');
   document.getElementById('screen-main').classList.remove('active');
   document.getElementById('screen-watch').classList.add('active');
@@ -622,16 +686,51 @@ function exitWatch(){
 function heroPlay(){
   document.getElementById('hero-play').classList.add('hidden');
   document.getElementById('hero-iframe').src=
-    'https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=0&start=30&rel=0&disablekb=1&fs=0&iv_load_policy=3';
+    'https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=30';
 }
 function thumbPlay(idx,vid){
   document.getElementById('tplay-'+idx).classList.add('hidden');
   document.getElementById('thumb-'+idx).src=
-    `https://www.youtube.com/embed/${vid}?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=${vid}&disablekb=1&fs=0&iv_load_policy=3`;
+    `https://www.youtube.com/embed/${vid}?autoplay=1&mute=1&controls=1&rel=0&start=10`;
+}
+function remindMe(el){
+  el.classList.toggle('set');
+  el.innerHTML = el.classList.contains('set')
+    ? '<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#378ADD" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Set!' 
+    : '<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1" fill="none"/><path d="M5 3v2.5L6.5 7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg> Remind me';
 }
 function moviePlay(){
   document.getElementById('movie-play').classList.add('hidden');
 }
+
+
+// Banner carousel
+
+
+
+var currentSlide = 0;
+setInterval(function(){ goSlide((currentSlide + 1) % 3); }, 4000);
+
+
+var _slide = 0;
+function goSlide(idx) {
+  _slide = idx;
+  var t = document.getElementById('banner-track');
+  if (t) t.style.transform = 'translateX(-' + (idx * 100) + '%)';
+  document.querySelectorAll('.bdot').forEach(function(d,i){ d.classList.toggle('on', i===idx); });
+}
+setInterval(function(){ goSlide((_slide + 1) % 3); }, 4000);
+
+
+
+var _slide = 0;
+function goSlide(idx) {
+  _slide = idx;
+  var t = document.getElementById('banner-track');
+  if (t) t.style.transform = 'translateX(-' + (idx * 100) + '%)';
+  document.querySelectorAll('.bdot').forEach(function(d,i){ d.classList.toggle('on', i===idx); });
+}
+setInterval(function(){ goSlide((_slide + 1) % 3); }, 4000);
 
 </script>
 </body>
