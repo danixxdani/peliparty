@@ -61,7 +61,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
 /* horizontal cards */
 .cards-row{display:flex;gap:10px;padding:0 16px 16px;overflow-x:auto;scroll-padding-left:16px}
 .cards-row::-webkit-scrollbar{display:none}
-.ecard{background:transparent;border-radius:14px;width:200px;flex-shrink:0;overflow:visible;cursor:pointer;transition:transform .15s;border:none}
+.ecard{background:transparent;border-radius:14px;width:200px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:transform .15s;border:none}
 .ecard:hover{transform:scale(1.03)}
 .ethumb{height:112px;position:relative;overflow:hidden;border-radius:12px}
 .ethumb iframe{width:100%;height:100%;border:none;pointer-events:none;display:block}
@@ -241,7 +241,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
 
 
   .card-movie-title{font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .format-chips{display:flex;gap:4px;margin-top:2px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+  .format-chips{display:flex;gap:4px;margin-top:5px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px}
   .format-chips::-webkit-scrollbar{display:none}
   .format-chip{flex-shrink:0;font-size:9px;font-weight:600;padding:2px 7px;border-radius:99px;white-space:nowrap}
   .chip-watchalong{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.2)}
@@ -264,10 +264,13 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
 
   /* REPLAY PIP */
   .replay-pip{position:absolute;top:6px;left:7px;background:rgba(0,0,0,0.6);color:rgba(255,255,255,0.85);font-size:8px;font-weight:600;padding:2px 7px;border-radius:99px;display:inline-flex;align-items:center;gap:4px;z-index:2;border:0.5px solid rgba(255,255,255,0.25)}
+  /* HASHTAGS */
+  .htags{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap}
+  .htag{font-size:9px;color:rgba(100,160,220,0.65);font-weight:500;white-space:nowrap}
+  /* NEW CHIP CLASSES */
   .chip-reactions{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.2)}
   .chip-breakdowns{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.2)}
-  .htags{display:flex;gap:5px;margin-top:2px;flex-wrap:wrap}
-  .htag{font-size:9px;color:rgba(255,255,255,0.38);font-weight:500;white-space:nowrap}
+  /* FORMAT CHIPS aligned under host name */
 </style>
 </head>
 <body>
@@ -355,66 +358,25 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="cards-row">
         <div class="ecard" onclick="enterWatch(1)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">2.1K viewers</div></div>
-          <div class="einfo">
-            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
-              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span>
-              <div style="min-width:0;flex:1">
-                <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Tonight's Pick 🎬</div>
-                <div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">The Dark Knight</div>
-                <div class="esub">Pablo, Diego</div>
-              </div>
-            </div>
-            <div class="format-chips"><span class="format-chip chip-watchalong">Watchalong</span></div>
-          </div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover;margin-left:-6px"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Tonight's Pick 🎬</div><div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">The Dark Knight</div><div class="esub">Pablo, Diego</div><div class="format-chips"><span class="format-chip chip-watchalong">watchalong</span></div></div></div></div>
         </div>
         <div class="ecard" onclick="enterWatch(2)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">1.4K viewers</div></div>
-          <div class="einfo">
-            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
-              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
-              <div style="min-width:0;flex:1">
-                <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Late Night Vibes 🌙</div>
-                <div class="esub">Camila</div>
-              </div>
-            </div>
-            <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
-          </div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Late Night Vibes 🌙</div><div class="esub">Camila</div><div class="format-chips"><span class="format-chip chip-reviews">reviews</span></div></div></div></div>
         </div>
         <div class="ecard" onclick="enterWatch(3)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">3.2K viewers</div></div>
-          <div class="einfo">
-            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
-              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=15" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"><span style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.15);border:1.5px solid #0d0d0d;display:inline-flex;align-items:center;justify-content:center;font-size:8px;font-weight:600;color:#fff;margin-left:-6px;flex-shrink:0">+1</span></span>
-              <div style="min-width:0;flex:1">
-                <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Critics Corner 🎙️</div>
-                <div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Interstellar</div>
-                <div class="esub">Isabela, Pablo +1</div>
-              </div>
-            </div>
-            <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
-          </div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=15" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover;margin-left:-6px"><span style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.15);border:1.5px solid #0d0d0d;display:inline-flex;align-items:center;justify-content:center;font-size:8px;font-weight:600;color:#fff;margin-left:-6px;flex-shrink:0">+1</span></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Critics Corner 🎙️</div><div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Interstellar</div><div class="esub">Isabela, Pablo +1</div><div class="format-chips"><span class="format-chip chip-reviews">reviews</span></div></div></div></div>
         </div>
         <div class="ecard" onclick="enterWatch(4)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/O9LLiJDZNU0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">876 viewers</div></div>
-          <div class="einfo">
-            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
-              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span>
-              <div style="min-width:0;flex:1">
-                <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Hidden Gem Night ✨</div>
-                <div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Pulp Fiction</div>
-                <div class="esub">Sara, Diego</div>
-              </div>
-            </div>
-            <div class="format-chips"><span class="format-chip chip-recs">Recommendations</span></div>
-          </div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover;margin-left:-6px"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Hidden Gem Night ✨</div><div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Pulp Fiction</div><div class="esub">Sara, Diego</div><div class="format-chips"><span class="format-chip chip-recs">recs</span></div></div></div></div>
         </div>
       </div>
 
-      
-
-      <!-- ③ CROWD FAVORITES -->
       <div class="sec-divider"></div>
 
+      <!-- ③ CROWD FAVORITES -->
       <div class="sec-head"><div class="sec-title">Crowd Favorites</div><div class="sec-more">›</div></div>
       <div class="cards-row">
         <div class="ecard" onclick="enterWatch(0)">
@@ -426,9 +388,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
                 <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">All-Time Party 🏆</div>
                 <div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">The Dark Knight</div>
                 <div class="esub">Isabela, Pablo +1</div>
+                          <div class="format-chips"><span class="format-chip chip-watchalong">Watchalong</span></div>
               </div>
             </div>
-            <div class="format-chips"><span class="format-chip chip-watchalong">Watchalong</span></div>
           </div>
         </div>
         <div class="ecard" onclick="enterWatch(3)">
@@ -440,9 +402,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
                 <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Can't Stop Watching 🔁</div>
                 
                 <div class="esub">Pablo</div>
+                          <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
               </div>
             </div>
-            <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
           </div>
         </div>
         <div class="ecard" onclick="enterWatch(1)">
@@ -454,9 +416,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
                 <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Fan Favorite ❤️</div>
                 <div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Forrest Gump</div>
                 <div class="esub">Isabela</div>
+                          <div class="format-chips"><span class="format-chip chip-watchalong">Watchalong</span></div>
               </div>
             </div>
-            <div class="format-chips"><span class="format-chip chip-watchalong">Watchalong</span></div>
           </div>
         </div>
         <div class="ecard" onclick="enterWatch(2)">
@@ -468,9 +430,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
                 <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Crowd Goes Wild 🔥</div>
                 
                 <div class="esub">Camila, Diego</div>
+                          <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
               </div>
             </div>
-            <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
           </div>
         </div>
         <div class="ecard" onclick="enterWatch(3)">
@@ -482,9 +444,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
                 <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Mind = Blown 🤯</div>
                 <div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Inception</div>
                 <div class="esub">Sara</div>
+                          <div class="format-chips"><span class="format-chip chip-watchalong">Watchalong</span></div>
               </div>
             </div>
-            <div class="format-chips"><span class="format-chip chip-watchalong">Watchalong</span></div>
           </div>
         </div>
         <div class="ecard" onclick="enterWatch(4)">
@@ -496,18 +458,16 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
                 <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Classic Rewatch 🎞️</div>
                 
                 <div class="esub">Diego</div>
+                          <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
               </div>
             </div>
-            <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
           </div>
         </div>
       </div>
 
-      
-
-      <!-- ④ HOSTED BY -->
       <div class="sec-divider"></div>
 
+      <!-- ④ HOSTED BY -->
       <div class="sec-head"><div class="sec-title">Hosted By</div><div class="sec-more">›</div></div>
       <div class="host-scroll">
         <div class="hchip" onclick="enterWatch(0)"><div class="hchip-wrap"><img class="hchip-img ring" src="https://i.pravatar.cc/80?img=47" alt=""><div class="hchip-live"></div></div><div class="hchip-name">Isabela</div><div class="hchip-sub">LIVE</div></div>
@@ -518,38 +478,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
         <div class="hchip"><div class="hchip-wrap"><img class="hchip-img" src="https://i.pravatar.cc/80?img=15" alt=""></div><div class="hchip-name">Mateo</div><div class="hchip-sub">Yesterday</div></div>
       </div>
 
-      
-
-      
-
-      
-      <!-- Watchalong -->
       <div class="sec-divider"></div>
 
-      <div class="sec-head"><div class="sec-title">Watchalong</div><div class="sec-more">›</div></div>
-      <div class="cards-row">
-        <div class="ecard" onclick="enterWatch(0)">
-          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=30" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">1.2K viewers</div></div>
-          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px">Cidade de Deus</div><div class="esub">Isabela, Pablo</div></div></div></div>
-        </div>
-        <div class="ecard" onclick="enterWatch(1)">
-          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">874 viewers</div></div>
-          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=15" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px">Forrest Gump</div><div class="esub">Mateo</div></div></div></div>
-        </div>
-        <div class="ecard" onclick="enterWatch(2)">
-          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">610 viewers</div></div>
-          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px">Inception</div><div class="esub">Camila, Diego</div></div></div></div>
-        </div>
-        <div class="ecard" onclick="enterWatch(3)">
-          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">445 viewers</div></div>
-          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px">Parasite</div><div class="esub">Sara</div></div></div></div>
-        </div>
-      </div>
-
-      
       <!-- ⑤ JUST CHATTING -->
-      <div class="sec-divider"></div>
-
       <div class="sec-head"><div class="sec-title">Just Chatting</div><div class="sec-more">›</div></div>
       <div class="cards-row">
         <div class="ecard" >
@@ -560,11 +491,13 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
               <div style="min-width:0;flex:1">
                 <div class="etitle" style="margin-bottom:1px">Talking K-dramas</div>
                 <div class="esub">Isabela</div>
-            <div class="htags"><span class="htag">#kdrama</span><span class="htag">#series</span><span class="htag">#recommendations</span></div>
+                
+              <div class="htags"><span class="htag">#kdrama</span><span class="htag">#series</span><span class="htag">#picks</span></div>
               </div>
             </div>
           </div>
-          </div>
+          
+        </div>
         <div class="ecard" >
           <div class="ethumb ethumb-static" style="position:relative"><img src="https://i.pravatar.cc/140?img=11" style="width:100%;height:100%;object-fit:cover;opacity:.85;display:block"><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">541 viewers</div></div>
           <div class="einfo">
@@ -573,11 +506,13 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
               <div style="min-width:0;flex:1">
                 <div class="etitle" style="margin-bottom:1px">Best of 2024 films</div>
                 <div class="esub">Pablo</div>
-            <div class="htags"><span class="htag">#2024</span><span class="htag">#rankings</span><span class="htag">#cinema</span></div>
+                
+              <div class="htags"><span class="htag">#2024</span><span class="htag">#rankings</span><span class="htag">#cinema</span></div>
               </div>
             </div>
           </div>
-          </div>
+          
+        </div>
         <div class="ecard" >
           <div class="ethumb ethumb-static" style="position:relative"><img src="https://i.pravatar.cc/140?img=20" style="width:100%;height:100%;object-fit:cover;opacity:.85;display:block"><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">318 viewers</div></div>
           <div class="einfo">
@@ -586,11 +521,13 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
               <div style="min-width:0;flex:1">
                 <div class="etitle" style="margin-bottom:1px">Movie recs for tonight</div>
                 <div class="esub">Camila, Diego</div>
-            <div class="htags"><span class="htag">#picks</span><span class="htag">#watchlist</span><span class="htag">#tonight</span></div>
+                
+              <div class="htags"><span class="htag">#picks</span><span class="htag">#watchlist</span><span class="htag">#tonight</span></div>
               </div>
             </div>
           </div>
-          </div>
+          
+        </div>
         <div class="ecard" >
           <div class="ethumb ethumb-static" style="position:relative"><img src="https://i.pravatar.cc/140?img=5" style="width:100%;height:100%;object-fit:cover;opacity:.85;display:block"><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">204 viewers</div></div>
           <div class="einfo">
@@ -599,20 +536,20 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
               <div style="min-width:0;flex:1">
                 <div class="etitle" style="margin-bottom:1px">Squid Game S2 thoughts</div>
                 <div class="esub">Diego</div>
-            <div class="htags"><span class="htag">#squidgame</span><span class="htag">#korean</span><span class="htag">#netflix</span></div>
+                
+              <div class="htags"><span class="htag">#squidgame</span><span class="htag">#korean</span><span class="htag">#netflix</span></div>
               </div>
             </div>
           </div>
-          </div>
+          
+        </div>
       </div>
 
-      
+      <div class="sec-divider"></div>
 
 
 
       <!-- ⑦ TRENDING CLIPS -->
-      <div class="sec-divider"></div>
-
       <div class="sec-head"><div class="sec-title">Trending Clips</div><div class="sec-more">›</div></div>
       <div class="clips-row">
         <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=47" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:47</div></div><div class="clip-info"><div class="clip-title">Isabela loses it at this scene</div><div class="clip-views">128K views</div></div></div>
@@ -622,11 +559,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
         <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=15" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">1:14</div></div><div class="clip-info"><div class="clip-title">That twist no one saw coming</div><div class="clip-views">43K views</div></div></div>
       </div>
 
-      
-
-      <!-- ⑧ MOVIES -->
       <div class="sec-divider"></div>
 
+      <!-- ⑧ MOVIES -->
       <div class="sec-head"><div class="sec-title">In Theater</div><div class="sec-more">›</div></div>
       <div class="poster-row">
         <div class="poster-card" onclick="enterWatch(0)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201809/2/9/295774279a25728a1aba34ad90cab6ef.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Cidade de Deus</div></div>
@@ -637,11 +572,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
         <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201810/7/e/7e531ff9258febff0fa872887096e72c.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Roma</div></div>
       </div>
 
-      
-
-      <!-- ⑨ COMING SOON -->
       <div class="sec-divider"></div>
 
+      <!-- ⑨ COMING SOON -->
       <div class="sec-head"><div class="sec-title">Coming Soon</div><div class="sec-more">›</div></div>
       <div class="poster-row" style="padding-bottom:20px">
         <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201809/2/9/295774279a25728a1aba34ad90cab6ef.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="coming-date">Apr 28</div></div><div class="poster-title">Squid Game S2</div></div>
@@ -651,9 +584,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
     </div>
 
     
-      
       <div class="sec-divider"></div>
-
       <div class="sec-head"><div class="sec-title">Trending Videos</div><div class="sec-more">›</div></div>
       <div class="cards-row">
         <div class="ecard">
@@ -668,9 +599,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
               <div style="min-width:0;flex:1">
                 <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Every Nolan Film Ranked</div>
                 <div class="esub">Pablo V.</div>
+                <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
               </div>
             </div>
-            <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
           </div>
         </div>
         <div class="ecard">
@@ -685,9 +616,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
               <div style="min-width:0;flex:1">
                 <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Why The Dark Knight is Perfect</div>
                 <div class="esub">Isabela B.</div>
+                <div class="format-chips"><span class="format-chip chip-recaps">Recaps</span></div>
               </div>
             </div>
-            <div class="format-chips"><span class="format-chip chip-recaps">Recaps</span></div>
           </div>
         </div>
         <div class="ecard">
@@ -702,9 +633,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
               <div style="min-width:0;flex:1">
                 <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Inception Explained in 5 min</div>
                 <div class="esub">Diego M.</div>
+                <div class="format-chips"><span class="format-chip chip-recaps">Recaps</span></div>
               </div>
             </div>
-            <div class="format-chips"><span class="format-chip chip-recaps">Recaps</span></div>
           </div>
         </div>
         <div class="ecard">
@@ -719,9 +650,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
               <div style="min-width:0;flex:1">
                 <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Top 10 Films of 2024</div>
                 <div class="esub">Camila R.</div>
+                <div class="format-chips"><span class="format-chip chip-recs">Recommendations</span></div>
               </div>
             </div>
-            <div class="format-chips"><span class="format-chip chip-recs">Recommendations</span></div>
           </div>
         </div>
         <div class="ecard">
@@ -736,77 +667,120 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
               <div style="min-width:0;flex:1">
                 <div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Forrest Gump Hidden Details</div>
                 <div class="esub">Sara L.</div>
+                <div class="format-chips"><span class="format-chip chip-recaps">Recaps</span></div>
               </div>
             </div>
-            <div class="format-chips"><span class="format-chip chip-recaps">Recaps</span></div>
           </div>
         </div>
       </div>
-
-
-      
-      <!-- Reviews: LIVE + Replay + LIVE -->
       <div class="sec-divider"></div>
+      <div class="sec-head"><div class="sec-title">Watchalong</div><div class="sec-more">›</div></div>
+      <div class="cards-row">
+        <div class="ecard" onclick="enterWatch(0)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=30" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">1.2K viewers</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover;margin-left:-6px"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Watching together 🎬</div><div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Cidade de Deus</div><div class="esub">Isabela, Pablo</div></div></div></div>
+        </div>
+        <div class="ecard" onclick="enterWatch(1)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">874 viewers</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=15" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Live watch party 🍿</div><div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Forrest Gump</div><div class="esub">Mateo</div></div></div></div>
+        </div>
+        <div class="ecard" onclick="enterWatch(2)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">610 viewers</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover;margin-left:-6px"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Watch with us 🌀</div><div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Inception</div><div class="esub">Camila, Diego</div></div></div></div>
+        </div>
+        <div class="ecard" onclick="enterWatch(3)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">445 viewers</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Watch party 🎭</div><div style="font-size:10px;font-weight:500;color:#378ADD;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Parasite</div><div class="esub">Sara</div></div></div></div>
+        </div>
+      </div>
 
+      <div class="sec-divider"></div>
       <div class="sec-head"><div class="sec-title">Reviews</div><div class="sec-more">›</div></div>
       <div class="cards-row">
         <div class="ecard" onclick="enterWatch(1)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">512 viewers</div></div>
-          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px">Tropa de Elite</div><div class="esub">Isabela</div><div class="htags"><span class="htag">#action</span><span class="htag">#brasil</span><span class="htag">#police</span></div></div></div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Tropa de Elite</div><div class="esub">Isabela</div><div class="htags"><span class="htag">#action</span><span class="htag">#brasil</span><span class="htag">#police</span></div></div></div></div>
         </div>
         <div class="ecard">
-          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rev2/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div class="replay-pip"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5A3 3 0 1 0 4.5 1.5" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round"/><path d="M4.5 1.5 3 0v3h3z" fill="rgba(255,255,255,0.85)"/></svg>Replay</div><div class="viewer-count-pip">27K views</div></div>
-          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px">Wild Tales</div><div class="esub">Pablo, Camila</div><div class="htags"><span class="htag">#darkcomedy</span><span class="htag">#argentina</span><span class="htag">#anthology</span></div></div></div></div>
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rev2/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div class="replay-pip"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5A3 3 0 1 0 4.5 1.5" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round"/><path d="M4.5 1.5 3 0v3h3z" fill="rgba(255,255,255,0.85)"/></svg>Replay</div><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">27K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">17:33</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover;margin-left:-6px"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Wild Tales</div><div class="esub">Pablo, Camila</div><div class="htags"><span class="htag">#darkcomedy</span><span class="htag">#argentina</span></div></div></div></div>
         </div>
         <div class="ecard" onclick="enterWatch(3)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">201 viewers</div></div>
-          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px">Parasite</div><div class="esub">Diego</div><div class="htags"><span class="htag">#thriller</span><span class="htag">#korean</span><span class="htag">#oscar</span></div></div></div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Parasite</div><div class="esub">Diego</div><div class="htags"><span class="htag">#thriller</span><span class="htag">#korean</span><span class="htag">#oscar</span></div></div></div></div>
         </div>
       </div>
 
-      
-      <!-- Recommendations: non-live UGC -->
       <div class="sec-divider"></div>
-
       <div class="sec-head"><div class="sec-title">Recommendations</div><div class="sec-more">›</div></div>
       <div class="cards-row">
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rec1/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">22K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">14:22</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">What to watch tonight</div><div class="esub">Camila</div><div class="htags"><span class="htag">#picks</span><span class="htag">#cinema</span><span class="htag">#weekend</span></div></div></div></div></div>
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rec2/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">15K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">9:48</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Hidden gems of 2024</div><div class="esub">Pablo</div><div class="htags"><span class="htag">#hidden</span><span class="htag">#2024</span><span class="htag">#mustwatch</span></div></div></div></div></div>
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rec3/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">9K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">6:05</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">K-Drama starter pack</div><div class="esub">Sara</div><div class="htags"><span class="htag">#kdrama</span><span class="htag">#beginner</span><span class="htag">#binge</span></div></div></div></div></div>
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rec4/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">7K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">11:30</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Must-see classics</div><div class="esub">Isabela</div><div class="htags"><span class="htag">#classics</span><span class="htag">#timeless</span><span class="htag">#cinema</span></div></div></div></div></div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rec1/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">22K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">14:22</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">What to watch tonight</div><div class="esub">Camila</div><div class="htags"><span class="htag">#picks</span><span class="htag">#watchlist</span><span class="htag">#tonight</span></div></div></div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rec2/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">15K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">9:48</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Hidden gems of 2024</div><div class="esub">Pablo</div><div class="htags"><span class="htag">#hidden</span><span class="htag">#gems</span><span class="htag">#2024</span></div></div></div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rec3/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">9K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">6:05</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">K-Drama starter pack</div><div class="esub">Sara</div><div class="htags"><span class="htag">#kdrama</span><span class="htag">#beginner</span><span class="htag">#binge</span></div></div></div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rec4/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">7K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">11:30</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Must-see classics</div><div class="esub">Isabela</div><div class="htags"><span class="htag">#classics</span><span class="htag">#timeless</span></div></div></div></div>
+        </div>
       </div>
 
-      
-      <!-- Recaps: UGC only -->
       <div class="sec-divider"></div>
-
       <div class="sec-head"><div class="sec-title">Recaps</div><div class="sec-more">›</div></div>
       <div class="cards-row">
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rcap1/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">31K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">8:14</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Parasite — full recap</div><div class="esub">Pablo</div><div class="htags"><span class="htag">#parasite</span><span class="htag">#recap</span><span class="htag">#korean</span></div></div></div></div></div>
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rcap2/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">18K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">5:50</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Cidade de Deus in 5 min</div><div class="esub">Isabela</div><div class="htags"><span class="htag">#cidadededeus</span><span class="htag">#brasil</span><span class="htag">#recap</span></div></div></div></div></div>
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rcap3/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">11K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">7:03</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Wild Tales explained</div><div class="esub">Sara</div><div class="htags"><span class="htag">#wildtales</span><span class="htag">#recap</span><span class="htag">#argentina</span></div></div></div></div></div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rcap1/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">31K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">8:14</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Parasite — full recap</div><div class="esub">Pablo</div><div class="htags"><span class="htag">#parasite</span><span class="htag">#recap</span><span class="htag">#korean</span></div></div></div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rcap2/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">18K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">5:50</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Cidade de Deus in 5 min</div><div class="esub">Isabela</div><div class="htags"><span class="htag">#cidadededeus</span><span class="htag">#brasil</span></div></div></div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/rcap3/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">11K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">7:03</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Wild Tales explained</div><div class="esub">Sara</div><div class="htags"><span class="htag">#wildtales</span><span class="htag">#recap</span></div></div></div></div>
+        </div>
       </div>
 
-      
-      <!-- Reactions: Replay + UGC + Replay (no live) -->
       <div class="sec-divider"></div>
-
       <div class="sec-head"><div class="sec-title">Reactions</div><div class="sec-more">›</div></div>
       <div class="cards-row">
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/react1/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">1.8K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">12:34</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">First watch reaction 😱</div><div class="esub">Isabela</div><div class="htags"><span class="htag">#reaction</span><span class="htag">#firstwatch</span><span class="htag">#live</span></div></div></div></div></div>
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/react2/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">44K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">19:02</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">My honest Inception reaction</div><div class="esub">Camila</div><div class="htags"><span class="htag">#inception</span><span class="htag">#reaction</span><span class="htag">#honest</span></div></div></div></div></div>
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/react3/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">920 views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">8:47</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Watching Parasite for the first time</div><div class="esub">Diego</div><div class="htags"><span class="htag">#parasite</span><span class="htag">#reaction</span><span class="htag">#firsttime</span></div></div></div></div></div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/react1/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">1.8K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">12:34</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">First watch reaction 😱</div><div class="esub">Isabela</div><div class="htags"><span class="htag">#reaction</span><span class="htag">#firstwatch</span></div></div></div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/react2/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">44K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">19:02</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">My honest Inception reaction</div><div class="esub">Camila</div><div class="htags"><span class="htag">#inception</span><span class="htag">#reaction</span></div></div></div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/react3/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">920 views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">8:47</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Watching Parasite for the first time</div><div class="esub">Diego</div><div class="htags"><span class="htag">#parasite</span><span class="htag">#firsttime</span></div></div></div></div>
+        </div>
       </div>
 
-      
-      <!-- Breakdowns: UGC + Replay + UGC -->
       <div class="sec-divider"></div>
-
       <div class="sec-head"><div class="sec-title">Breakdowns</div><div class="sec-more">›</div></div>
       <div class="cards-row">
-        <div class="ecard" onclick="enterWatch(0)"><div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">1.1K viewers</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Every Parasite symbol explained</div><div class="esub">Pablo</div><div class="htags"><span class="htag">#parasite</span><span class="htag">#breakdown</span><span class="htag">#symbolism</span></div></div></div></div></div>
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/bkd2/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div class="replay-pip"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5A3 3 0 1 0 4.5 1.5" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round"/><path d="M4.5 1.5 3 0v3h3z" fill="rgba(255,255,255,0.85)"/></svg>Replay</div><div class="viewer-count-pip">740 views</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Dark Knight ending breakdown</div><div class="esub">Sara</div><div class="htags"><span class="htag">#darkknight</span><span class="htag">#breakdown</span><span class="htag">#ending</span></div></div></div></div></div>
-        <div class="ecard"><div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/bkd3/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">38K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">16:44</div></div><div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Inception layers decoded</div><div class="esub">Camila</div><div class="htags"><span class="htag">#inception</span><span class="htag">#breakdown</span><span class="htag">#theory</span></div></div></div></div></div>
+        <div class="ecard" onclick="enterWatch(0)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">1.1K viewers</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Every Parasite symbol explained</div><div class="esub">Pablo</div><div class="htags"><span class="htag">#parasite</span><span class="htag">#symbolism</span><span class="htag">#analysis</span></div></div></div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/bkd2/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div class="replay-pip"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5A3 3 0 1 0 4.5 1.5" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round"/><path d="M4.5 1.5 3 0v3h3z" fill="rgba(255,255,255,0.85)"/></svg>Replay</div><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">740 views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">16:20</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Dark Knight ending breakdown</div><div class="esub">Sara</div><div class="htags"><span class="htag">#darkknight</span><span class="htag">#ending</span><span class="htag">#theory</span></div></div></div></div>
+        </div>
+        <div class="ecard">
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://picsum.photos/seed/bkd3/400/225" style="width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px">38K views</div><div style="position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;padding:2px 5px;border-radius:4px">16:44</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Inception layers decoded</div><div class="esub">Camila</div><div class="htags"><span class="htag">#inception</span><span class="htag">#dreams</span><span class="htag">#theory</span></div></div></div></div>
+        </div>
       </div>
 
     <div class="nav-bar">
