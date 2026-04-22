@@ -53,9 +53,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
 .gpill.on{background:#185FA5;color:#fff;border-color:#378ADD}
 
 /* section */
-.sec-head{display:flex;justify-content:space-between;align-items:center;padding:0 16px 10px}
+.sec-head{display:flex;align-items:center;padding:0 16px 10px;gap:4px}
 .sec-title{font-size:13px;font-weight:600;color:rgba(255,255,255,0.75)}
-.sec-more{font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1}
+.sec-more{font-size:16px;color:rgba(255,255,255,0.75);cursor:pointer;line-height:1;font-weight:300}
 .sec-divider{height:.5px;background:rgba(255,255,255,0.07);margin:4px 16px 16px}
 
 /* horizontal cards */
@@ -250,8 +250,8 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
   .chip-recs{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);border:0.5px solid rgba(255,255,255,0.2)}
   .genre-grid-row{display:flex;gap:10px;padding:0 16px 16px;overflow-x:auto}
   .genre-grid-row::-webkit-scrollbar{display:none}
-  .genre-tile{flex-shrink:0;width:82px;cursor:pointer;border-radius:12px;overflow:hidden;position:relative}
-  .genre-tile-bg{height:110px;border-radius:12px;position:relative;overflow:hidden;width:82px}
+  .genre-tile{flex-shrink:0;width:105px;cursor:pointer;border-radius:12px;overflow:hidden;position:relative}
+  .genre-tile-bg{height:110px;border-radius:12px;position:relative;overflow:hidden;width:105px}
   .genre-tile-label{position:absolute;bottom:8px;left:8px;font-size:12px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,0.6)}
   .genre-tile-count{display:none}
   .genre-live-dot{position:absolute;top:8px;left:8px;width:7px;height:7px;border-radius:50%;background:#E24B4A;display:flex;align-items:center;justify-content:center}
@@ -327,7 +327,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       </div>
 
       <!-- ② ON TODAY -->
-      <div class="sec-head" style="margin-top:14px"><div class="sec-title">On Today</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
+      <div class="sec-head" style="margin-top:14px"><div class="sec-title">On Today</div><div class="sec-more">›</div></div>
       <div class="cards-row">
         <div class="ecard" onclick="enterWatch(1)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">9:00 PM</div><div class="efree-b">FREE</div><div class="viewer-count-pip">2.1K viewers</div></div>
@@ -390,7 +390,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="sec-divider"></div>
 
       <!-- ③ CROWD FAVORITES -->
-      <div class="sec-head"><div class="sec-title">Crowd Favorites</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
+      <div class="sec-head"><div class="sec-title">Crowd Favorites</div><div class="sec-more">›</div></div>
       <div class="cards-row">
         <div class="ecard" onclick="enterWatch(0)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#1</div><div class="viewer-count-pip">24.8K viewers</div></div>
@@ -481,7 +481,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="sec-divider"></div>
 
       <!-- ④ HOSTED BY -->
-      <div class="sec-head"><div class="sec-title">Hosted By</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
+      <div class="sec-head"><div class="sec-title">Hosted By</div><div class="sec-more">›</div></div>
       <div class="host-scroll">
         <div class="hchip" onclick="enterWatch(0)"><div class="hchip-wrap"><img class="hchip-img ring" src="https://i.pravatar.cc/80?img=47" alt=""><div class="hchip-live"></div></div><div class="hchip-name">Isabela</div><div class="hchip-sub">LIVE</div></div>
         <div class="hchip" onclick="enterWatch(0)"><div class="hchip-wrap"><img class="hchip-img ring" src="https://i.pravatar.cc/80?img=11" alt=""><div class="hchip-live"></div></div><div class="hchip-name">Pablo</div><div class="hchip-sub">LIVE</div></div>
@@ -494,7 +494,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="sec-divider"></div>
 
       <!-- ⑤ JUST CHATTING -->
-      <div class="sec-head"><div class="sec-title">Just Chatting</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
+      <div class="sec-head"><div class="sec-title">Just Chatting</div><div class="sec-more">›</div></div>
       <div class="cards-row">
         <div class="ecard" >
           <div class="ethumb ethumb-static" style="position:relative"><img src="https://i.pravatar.cc/140?img=47" style="width:100%;height:100%;object-fit:cover;opacity:.85;display:block"><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">892 viewers</div></div>
@@ -561,7 +561,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="sec-divider"></div>
 
       <!-- ⑥ FORMATS -->
-      <div class="sec-head"><div class="sec-title">Live Categories</div><div class="sec-more" style="font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1">›</div></div>
+      <div class="sec-head"><div class="sec-title">Live Categories</div><div class="sec-more">›</div></div>
       <div class="genre-grid-row">
 
         <div class="genre-tile">
@@ -595,7 +595,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       </div><div class="sec-divider"></div>
 
       <!-- ⑦ TRENDING CLIPS -->
-      <div class="sec-head"><div class="sec-title">Trending Clips</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
+      <div class="sec-head"><div class="sec-title">Trending Clips</div><div class="sec-more">›</div></div>
       <div class="clips-row">
         <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=47" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:47</div></div><div class="clip-info"><div class="clip-title">Isabela loses it at this scene</div><div class="clip-views">128K views</div></div></div>
         <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=11" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">1:02</div></div><div class="clip-info"><div class="clip-title">Pablo's take on the ending</div><div class="clip-views">94K views</div></div></div>
@@ -607,7 +607,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="sec-divider"></div>
 
       <!-- ⑧ MOVIES -->
-      <div class="sec-head"><div class="sec-title">Movies</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
+      <div class="sec-head"><div class="sec-title">Movies</div><div class="sec-more">›</div></div>
       <div class="poster-row">
         <div class="poster-card" onclick="enterWatch(0)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201809/2/9/295774279a25728a1aba34ad90cab6ef.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Cidade de Deus</div></div>
         <div class="poster-card" onclick="enterWatch(1)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=peliplat/default/20230330/190efd4791709a8b321584a03000e458.jpeg&source=s3-peliplat&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Tropa de Elite</div></div>
@@ -620,7 +620,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="sec-divider"></div>
 
       <!-- ⑨ COMING SOON -->
-      <div class="sec-head"><div class="sec-title">Coming Soon</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
+      <div class="sec-head"><div class="sec-title">Coming Soon</div><div class="sec-more">›</div></div>
       <div class="poster-row" style="padding-bottom:20px">
         <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201809/2/9/295774279a25728a1aba34ad90cab6ef.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="coming-date">Apr 28</div></div><div class="poster-title">Squid Game S2</div></div>
         <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=peliplat/default/20230330/190efd4791709a8b321584a03000e458.jpeg&source=s3-peliplat&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="coming-date">May 3</div></div><div class="poster-title">El Secreto de Sus Ojos</div></div>
@@ -630,7 +630,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
 
     
       <div class="sec-divider"></div>
-      <div class="sec-head"><div class="sec-title">Watchalong</div><div class="sec-more" style="font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1">›</div></div>
+      <div class="sec-head"><div class="sec-title">Watchalong</div><div class="sec-more">›</div></div>
       <div class="cards-row">
         <div class="ecard" onclick="enterWatch(0)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">1.2K viewers</div></div>
@@ -690,7 +690,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
         </div>
       </div>
       <div class="sec-divider"></div>
-      <div class="sec-head"><div class="sec-title">Recaps</div><div class="sec-more" style="font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1">›</div></div>
+      <div class="sec-head"><div class="sec-title">Recaps</div><div class="sec-more">›</div></div>
       <div class="cards-row">
         <div class="ecard" onclick="enterWatch(2)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">623 viewers</div></div>
@@ -733,7 +733,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
         </div>
       </div>
       <div class="sec-divider"></div>
-      <div class="sec-head"><div class="sec-title">Reviews</div><div class="sec-more" style="font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1">›</div></div>
+      <div class="sec-head"><div class="sec-title">Reviews</div><div class="sec-more">›</div></div>
       <div class="cards-row">
         <div class="ecard" onclick="enterWatch(1)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">512 viewers</div></div>
@@ -776,7 +776,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
         </div>
       </div>
       <div class="sec-divider"></div>
-      <div class="sec-head"><div class="sec-title">Recommendations</div><div class="sec-more" style="font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1">›</div></div>
+      <div class="sec-head"><div class="sec-title">Recommendations</div><div class="sec-more">›</div></div>
       <div class="cards-row">
         <div class="ecard" onclick="enterWatch(0)">
           <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">744 viewers</div></div>
