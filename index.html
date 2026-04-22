@@ -55,19 +55,19 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
 /* section */
 .sec-head{display:flex;justify-content:space-between;align-items:center;padding:0 16px 10px}
 .sec-title{font-size:13px;font-weight:600;color:rgba(255,255,255,0.75)}
-.sec-more{font-size:11px;color:#378ADD;cursor:pointer}
+.sec-more{font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1}
 .sec-divider{height:.5px;background:rgba(255,255,255,0.07);margin:4px 16px 16px}
 
 /* horizontal cards */
-.cards-row{display:flex;gap:10px;padding:0 16px 16px;overflow-x:auto}
+.cards-row{display:flex;gap:10px;padding:0 16px 16px;overflow-x:auto;scroll-padding-left:16px}
 .cards-row::-webkit-scrollbar{display:none}
-.ecard{background:#1c1c1c;border-radius:14px;width:140px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:transform .15s;border:.5px solid rgba(255,255,255,0.06)}
+.ecard{background:transparent;border-radius:14px;width:200px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:transform .15s;border:none}
 .ecard:hover{transform:scale(1.03)}
-.ethumb{height:80px;position:relative;overflow:hidden}
+.ethumb{height:112px;position:relative;overflow:hidden;border-radius:12px}
 .ethumb iframe{width:100%;height:100%;border:none;pointer-events:none;display:block}
 .etime-b{position:absolute;top:6px;left:7px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.85);font-size:9px;padding:2px 6px;border-radius:99px;z-index:2}
 .efree-b{position:absolute;top:6px;right:7px;background:#639922;color:#fff;font-size:8px;font-weight:600;padding:2px 6px;border-radius:99px;z-index:2}
-.einfo{padding:8px 10px}
+.einfo{padding:6px 0 4px 0;background:transparent}
 .etitle{font-size:12px;font-weight:600;color:#fff;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .esub{font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:5px}
 .eavs{display:flex;gap:3px}
@@ -188,7 +188,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
   .bdot.on{background:#fff;width:18px}
 
   /* STATIC THUMB */
-  .ethumb-static{overflow:hidden;position:relative;height:80px}
+  .ethumb-static{overflow:hidden;position:relative;height:112px;border-radius:12px}
   .ethumb-static img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 
   /* RANK */
@@ -229,10 +229,27 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
   .bell-btn.active{background:#378ADD;border-color:#378ADD}
   .bell-btn svg{flex-shrink:0}
 
+
+
+  .einfo-title-row{display:flex;align-items:center;gap:6px;margin-bottom:2px}
+  .einfo-title-row .etitle{margin-bottom:0;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .av-stack{display:flex;align-items:center;flex-shrink:0}
+  .av-stack .eav-img{width:18px;height:18px;border-radius:50%;border:1.5px solid #1c1c1c;flex-shrink:0}
+  .av-stack .eav-img:not(:first-child){margin-left:-6px}
+  .av-plus{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.15);border:1.5px solid #1c1c1c;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:600;color:rgba(255,255,255,0.8);margin-left:-6px;flex-shrink:0}
+  .viewer-count-pip{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,0.65);color:rgba(255,255,255,0.9);font-size:9px;font-weight:500;padding:2px 6px;border-radius:4px;z-index:3}
+
+  .format-chips{display:flex;gap:4px;margin-top:5px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .format-chips::-webkit-scrollbar{display:none}
+  .format-chip{flex-shrink:0;font-size:9px;font-weight:600;padding:2px 7px;border-radius:99px;white-space:nowrap}
+  .chip-watchalong{background:rgba(24,95,165,0.25);color:#6AAEE8;border:0.5px solid rgba(24,95,165,0.4)}
+  .chip-recaps{background:rgba(127,119,221,0.25);color:#B0ACF0;border:0.5px solid rgba(127,119,221,0.4)}
+  .chip-reviews{background:rgba(29,158,117,0.25);color:#5DCAA5;border:0.5px solid rgba(29,158,117,0.4)}
+  .chip-recs{background:rgba(186,117,23,0.25);color:#DFA84A;border:0.5px solid rgba(186,117,23,0.4)}
   .genre-grid-row{display:flex;gap:10px;padding:0 16px 16px;overflow-x:auto}
   .genre-grid-row::-webkit-scrollbar{display:none}
-  .genre-tile{flex-shrink:0;width:110px;cursor:pointer;border-radius:12px;overflow:hidden;position:relative}
-  .genre-tile-bg{height:110px;border-radius:12px;position:relative;overflow:hidden}
+  .genre-tile{flex-shrink:0;width:82px;cursor:pointer;border-radius:12px;overflow:hidden;position:relative}
+  .genre-tile-bg{height:110px;border-radius:12px;position:relative;overflow:hidden;width:82px}
   .genre-tile-label{position:absolute;bottom:8px;left:8px;font-size:12px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,0.6)}
   .genre-tile-count{display:none}
   .genre-live-dot{position:absolute;top:8px;left:8px;width:7px;height:7px;border-radius:50%;background:#E24B4A;display:flex;align-items:center;justify-content:center}
@@ -255,7 +272,16 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
     <div class="main-scroll">
       <div class="main-header">
         <div class="logo">Peli<span>Party</span></div>
-        <img src="https://i.pravatar.cc/60?img=47" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.2);cursor:pointer">
+        <div style="display:flex;align-items:center;gap:8px">
+          <div onclick="" style="width:32px;height:32px;border-radius:50%;background:none;display:flex;align-items:center;justify-content:center;cursor:pointer" title="Wallet">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M11 2L4 8.5L11 20L18 8.5L11 2Z" stroke="rgba(255,255,255,0.85)" stroke-width="1.4" stroke-linejoin="round" fill="none"/>
+              <path d="M4 8.5H18" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+              <path d="M7.5 8.5L11 2L14.5 8.5" stroke="rgba(255,255,255,0.4)" stroke-width="1" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <img src="https://i.pravatar.cc/60?img=47" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.2);cursor:pointer">
+        </div>
       </div>
 
       <!-- ① LIVE BANNER CAROUSEL -->
@@ -299,53 +325,121 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       </div>
 
       <!-- ② ON TODAY -->
-      <div class="sec-head" style="margin-top:14px"><div class="sec-title">On Today</div><div class="sec-more">See all</div></div>
+      <div class="sec-head" style="margin-top:14px"><div class="sec-title">On Today</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
       <div class="cards-row">
         <div class="ecard" onclick="enterWatch(1)">
-          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">9:00 PM</div><div class="efree-b">FREE</div></div>
-          <div class="einfo"><div class="etitle">Tropa de Elite</div><div class="esub">Pablo + Sociologist</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=11" alt=""><img class="eav-img" src="https://i.pravatar.cc/30?img=5" alt=""></div></div>
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">9:00 PM</div><div class="efree-b">FREE</div><div class="viewer-count-pip">2.1K viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span>
+              <div>
+                <div class="etitle" style="margin-bottom:1px">Tropa de Elite</div>
+                <div class="esub">Pablo, Diego</div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="ecard" onclick="enterWatch(2)">
-          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=20" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">10:30 PM</div></div>
-          <div class="einfo"><div class="etitle">Y Tu Mamá También</div><div class="esub">@agustineme</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=20" alt=""></div></div>
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">10:30 PM</div><div class="viewer-count-pip">1.4K viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div>
+                <div class="etitle" style="margin-bottom:1px">Y Tu Mamá También</div>
+                <div class="esub">Camila</div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="ecard" onclick="enterWatch(3)">
-          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=15" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">Tomorrow 8pm</div></div>
-          <div class="einfo"><div class="etitle">Parasite</div><div class="esub">3 Film Critics</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=15" alt=""><img class="eav-img" src="https://i.pravatar.cc/30?img=47" alt=""></div></div>
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">Tomorrow 8 PM</div><div class="viewer-count-pip">3.2K viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=15" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"><span style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.15);border:1.5px solid #0d0d0d;display:inline-flex;align-items:center;justify-content:center;font-size:8px;font-weight:600;color:#fff;margin-left:-6px;flex-shrink:0">+1</span></span>
+              <div>
+                <div class="etitle" style="margin-bottom:1px">Parasite</div>
+                <div class="esub">Isabela, Pablo +1</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="ecard">
-          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/O9LLiJDZNU0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">Tomorrow 10pm</div></div>
-          <div class="einfo"><div class="etitle">Wild Tales</div><div class="esub">Sara + Guest</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=32" alt=""></div></div>
+        <div class="ecard" onclick="enterWatch(4)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/O9LLiJDZNU0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="etime-b">Tomorrow 10 PM</div><div class="viewer-count-pip">876 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span>
+              <div>
+                <div class="etitle" style="margin-bottom:1px">Wild Tales</div>
+                <div class="esub">Sara, Diego</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="sec-divider"></div>
 
       <!-- ③ CROWD FAVORITES -->
-      <div class="sec-head"><div class="sec-title">Crowd Favorites</div><div class="sec-more">See all</div></div>
+      <div class="sec-head"><div class="sec-title">Crowd Favorites</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
       <div class="cards-row">
         <div class="ecard" onclick="enterWatch(0)">
-          <div class="ethumb ethumb-static" style="background:#0C1A2A"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=15" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#1</div></div>
-          <div class="einfo"><div class="etitle">Cidade de Deus</div><div class="esub" style="color:#EF9F27;font-weight:500">24,831 viewers</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=47" alt=""><img class="eav-img" src="https://i.pravatar.cc/30?img=11" alt=""></div></div>
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#1</div><div class="viewer-count-pip">24.8K viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"><span style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.15);border:1.5px solid #0d0d0d;display:inline-flex;align-items:center;justify-content:center;font-size:8px;font-weight:600;color:#fff;margin-left:-6px;flex-shrink:0">+1</span></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Cidade de Deus</div>
+                <div class="esub">Isabela, Pablo +1</div>
+                <div class="format-chips"><span class="format-chip chip-watchalong">Watchalong</span><span class="format-chip chip-reviews">Reviews</span></div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="ecard" onclick="enterWatch(3)">
-          <div class="ethumb ethumb-static" style="background:#1A0C2A"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=15" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#2</div></div>
-          <div class="einfo"><div class="etitle">Parasite</div><div class="esub" style="color:#EF9F27;font-weight:500">18,204 viewers</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=15" alt=""></div></div>
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#2</div><div class="viewer-count-pip">18.2K viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=15" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Parasite</div>
+                <div class="esub">Pablo</div>
+                <div class="format-chips"><span class="format-chip chip-watchalong">Watchalong</span><span class="format-chip chip-recaps">Recaps</span></div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="ecard" onclick="enterWatch(1)">
-          <div class="ethumb ethumb-static" style="background:#2A0C0C"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#3</div></div>
-          <div class="einfo"><div class="etitle">Tropa de Elite</div><div class="esub" style="color:#EF9F27;font-weight:500">12,547 viewers</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=11" alt=""></div></div>
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#3</div><div class="viewer-count-pip">12.5K viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Tropa de Elite</div>
+                <div class="esub">Isabela</div>
+                <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="ecard" onclick="enterWatch(2)">
-          <div class="ethumb ethumb-static" style="background:#0C2A0C"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=20" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#4</div></div>
-          <div class="einfo"><div class="etitle">Y Tu Mamá También</div><div class="esub" style="color:#EF9F27;font-weight:500">9,103 viewers</div><div class="eavs"><img class="eav-img" src="https://i.pravatar.cc/30?img=20" alt=""></div></div>
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="rank-num">#4</div><div class="viewer-count-pip">9.1K viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Y Tu Mamá También</div>
+                <div class="esub">Camila, Diego</div>
+                <div class="format-chips"><span class="format-chip chip-watchalong">Watchalong</span><span class="format-chip chip-recs">Recommendations</span><span class="format-chip chip-recaps">Recaps</span></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="sec-divider"></div>
 
       <!-- ④ HOSTED BY -->
-      <div class="sec-head"><div class="sec-title">Hosted By</div><div class="sec-more">See all</div></div>
+      <div class="sec-head"><div class="sec-title">Hosted By</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
       <div class="host-scroll">
         <div class="hchip" onclick="enterWatch(0)"><div class="hchip-wrap"><img class="hchip-img ring" src="https://i.pravatar.cc/80?img=47" alt=""><div class="hchip-live"></div></div><div class="hchip-name">Isabela</div><div class="hchip-sub">LIVE</div></div>
         <div class="hchip" onclick="enterWatch(0)"><div class="hchip-wrap"><img class="hchip-img ring" src="https://i.pravatar.cc/80?img=11" alt=""><div class="hchip-live"></div></div><div class="hchip-name">Pablo</div><div class="hchip-sub">LIVE</div></div>
@@ -358,77 +452,100 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="sec-divider"></div>
 
       <!-- ⑤ JUST CHATTING -->
-      <div class="sec-head"><div class="sec-title">Just Chatting</div><div class="sec-more">See all</div></div>
+      <div class="sec-head"><div class="sec-title">Just Chatting</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
       <div class="cards-row">
-        <div class="ecard">
-          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div></div>
-          <div class="einfo"><div class="etitle">Isabela B.</div><div class="esub">Talking K-dramas</div><div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px">892 viewers</div></div>
+        <div class="ecard" >
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://i.pravatar.cc/140?img=47" style="width:100%;height:100%;object-fit:cover;opacity:.85;display:block"><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">892 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Talking K-dramas</div>
+                <div class="esub">Isabela</div>
+                <div class="format-chips"><span class="format-chip chip-recaps">Recaps</span><span class="format-chip chip-recs">Recommendations</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="ecard">
-          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=20" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div></div>
-          <div class="einfo"><div class="etitle">Pablo V.</div><div class="esub">Best of 2024 films</div><div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px">541 viewers</div></div>
+        <div class="ecard" >
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://i.pravatar.cc/140?img=11" style="width:100%;height:100%;object-fit:cover;opacity:.85;display:block"><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">541 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Best of 2024 films</div>
+                <div class="esub">Pablo</div>
+                <div class="format-chips"><span class="format-chip chip-reviews">Reviews</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="ecard">
-          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=15" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div></div>
-          <div class="einfo"><div class="etitle">Camila R.</div><div class="esub">Movie recs for tonight</div><div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px">318 viewers</div></div>
+        <div class="ecard" >
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://i.pravatar.cc/140?img=20" style="width:100%;height:100%;object-fit:cover;opacity:.85;display:block"><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">318 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Movie recs for tonight</div>
+                <div class="esub">Camila, Diego</div>
+                <div class="format-chips"><span class="format-chip chip-recs">Recommendations</span><span class="format-chip chip-watchalong">Watchalong</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="ecard">
-          <div class="ethumb ethumb-static"><iframe src="https://www.youtube.com/embed/O9LLiJDZNU0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div></div>
-          <div class="einfo"><div class="etitle">Diego M.</div><div class="esub">Squid Game S2 thoughts</div><div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px">204 viewers</div></div>
+        <div class="ecard" >
+          <div class="ethumb ethumb-static" style="position:relative"><img src="https://i.pravatar.cc/140?img=5" style="width:100%;height:100%;object-fit:cover;opacity:.85;display:block"><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">204 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Squid Game S2 thoughts</div>
+                <div class="esub">Diego</div>
+                <div class="format-chips"><span class="format-chip chip-recaps">Recaps</span></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="sec-divider"></div>
 
-      <!-- ⑥ GENRES -->
-      <div class="sec-head"><div class="sec-title">Browse by Genre</div><div class="sec-more">See all</div></div>
+      <!-- ⑥ FORMATS -->
+      <div class="sec-head"><div class="sec-title">Live Categories</div><div class="sec-more" style="font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1">›</div></div>
       <div class="genre-grid-row">
-        <div class="genre-tile">
-          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#0C2A4A,#185FA5)"><div class="genre-tile-label">Drama</div>
-            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>12 live</div>
-          </div>
-        </div>
-        <div class="genre-tile">
-          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#2A0C0C,#993C1D)"><div class="genre-tile-label">Thriller</div>
-            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>8 live</div>
-          </div>
-        </div>
-        <div class="genre-tile">
-          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#0C2A18,#1D9E75)"><div class="genre-tile-label">Comedy</div>
-            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>5 live</div>
-          </div>
-        </div>
-        <div class="genre-tile">
-          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#26215C,#7F77DD)"><div class="genre-tile-label">K-Drama</div>
-            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>14 live</div>
-          </div>
-        </div>
-        <div class="genre-tile">
-          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#2A1A0C,#BA7517)"><div class="genre-tile-label">Docs</div>
-            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>3 live</div>
-          </div>
-        </div>
-        <div class="genre-tile">
-          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#2A0C1A,#D4537E)"><div class="genre-tile-label">Horror</div>
-            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>6 live</div>
-          </div>
-        </div>
-        <div class="genre-tile">
-          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#0C1A2A,#5DCAA5)"><div class="genre-tile-label">Anime</div>
-            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>9 live</div>
-          </div>
-        </div>
-        <div class="genre-tile">
-          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#1A2A0C,#639922)"><div class="genre-tile-label">Romance</div>
-            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>2 live</div>
-          </div>
-        </div>
-      </div>
 
-      <div class="sec-divider"></div>
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#0C2A4A,#185FA5)">
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>18 live</div>
+            <div class="genre-tile-label">Watchalong</div>
+          </div>
+        </div>
+
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#26215C,#7F77DD)">
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>9 live</div>
+            <div class="genre-tile-label">Recaps</div>
+          </div>
+        </div>
+
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#0C2A18,#1D9E75)">
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>6 live</div>
+            <div class="genre-tile-label">Reviews</div>
+          </div>
+        </div>
+
+        <div class="genre-tile">
+          <div class="genre-tile-bg" style="background:linear-gradient(135deg,#2A1A0C,#BA7517)">
+            <div class="genre-live-badge"><div class="genre-live-badge-dot"></div>4 live</div>
+            <div class="genre-tile-label">Recommendations</div>
+          </div>
+        </div>
+
+      </div><div class="sec-divider"></div>
 
       <!-- ⑦ TRENDING CLIPS -->
-      <div class="sec-head"><div class="sec-title">Trending Clips</div><div class="sec-more">See all</div></div>
+      <div class="sec-head"><div class="sec-title">Trending Clips</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
       <div class="clips-row">
         <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=47" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:47</div></div><div class="clip-info"><div class="clip-title">Isabela loses it at this scene</div><div class="clip-views">128K views</div></div></div>
         <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=11" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">1:02</div></div><div class="clip-info"><div class="clip-title">Pablo's take on the ending</div><div class="clip-views">94K views</div></div></div>
@@ -440,7 +557,7 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="sec-divider"></div>
 
       <!-- ⑧ MOVIES -->
-      <div class="sec-head"><div class="sec-title">Movies</div><div class="sec-more">See all</div></div>
+      <div class="sec-head"><div class="sec-title">Movies</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
       <div class="poster-row">
         <div class="poster-card" onclick="enterWatch(0)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201809/2/9/295774279a25728a1aba34ad90cab6ef.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Cidade de Deus</div></div>
         <div class="poster-card" onclick="enterWatch(1)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=peliplat/default/20230330/190efd4791709a8b321584a03000e458.jpeg&source=s3-peliplat&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Tropa de Elite</div></div>
@@ -453,13 +570,213 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       <div class="sec-divider"></div>
 
       <!-- ⑨ COMING SOON -->
-      <div class="sec-head"><div class="sec-title">Coming Soon</div><div class="sec-more">See all</div></div>
+      <div class="sec-head"><div class="sec-title">Coming Soon</div><div class="sec-more" style="font-size:16px;opacity:0.5;font-weight:300">›</div></div>
       <div class="poster-row" style="padding-bottom:20px">
         <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201809/2/9/295774279a25728a1aba34ad90cab6ef.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="coming-date">Apr 28</div></div><div class="poster-title">Squid Game S2</div></div>
         <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=peliplat/default/20230330/190efd4791709a8b321584a03000e458.jpeg&source=s3-peliplat&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="coming-date">May 3</div></div><div class="poster-title">El Secreto de Sus Ojos</div></div>
         <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201903/1/0/106d6b5ca0a87ee01290896f91d825be.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="coming-date">May 10</div></div><div class="poster-title">Nosso Lar</div></div>
         <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/202008/d/a/da74b18f3e3d48f3b04f178488c9292a.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"><div class="bell-btn" onclick="event.stopPropagation();this.classList.toggle('active')"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.5 1.5 3 3 3 5v3L2 9.5h9L10 8V5C10 3 8.5 1.5 6.5 1.5z" stroke="#fff" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="11" r="1" fill="#fff"/></svg></div><div class="coming-date">May 17</div></div><div class="poster-title">Amores Perros</div></div>
     </div>
+
+    
+      <div class="sec-divider"></div>
+      <div class="sec-head"><div class="sec-title">Watchalong</div><div class="sec-more" style="font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1">›</div></div>
+      <div class="cards-row">
+        <div class="ecard" onclick="enterWatch(0)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">1.2K viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Cidade de Deus</div>
+                <div class="esub">Isabela, Pablo</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ecard" onclick="enterWatch(3)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">847 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Parasite</div>
+                <div class="esub">Sara</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ecard" onclick="enterWatch(2)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">534 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Wild Tales</div>
+                <div class="esub">Diego</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ecard" onclick="enterWatch(1)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">312 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Tropa de Elite</div>
+                <div class="esub">Camila</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-divider"></div>
+      <div class="sec-head"><div class="sec-title">Recaps</div><div class="sec-more" style="font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1">›</div></div>
+      <div class="cards-row">
+        <div class="ecard" onclick="enterWatch(2)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">623 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Y Tu Mamá También</div>
+                <div class="esub">Pablo</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ecard" onclick="enterWatch(3)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">408 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Parasite</div>
+                <div class="esub">Isabela, Diego</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ecard" onclick="enterWatch(0)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">291 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Cidade de Deus</div>
+                <div class="esub">Sara</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-divider"></div>
+      <div class="sec-head"><div class="sec-title">Reviews</div><div class="sec-more" style="font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1">›</div></div>
+      <div class="cards-row">
+        <div class="ecard" onclick="enterWatch(1)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">512 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Tropa de Elite</div>
+                <div class="esub">Isabela</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ecard" onclick="enterWatch(2)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">389 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;margin-left:-6px;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Wild Tales</div>
+                <div class="esub">Pablo, Camila</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ecard" onclick="enterWatch(3)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">201 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Parasite</div>
+                <div class="esub">Diego</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-divider"></div>
+      <div class="sec-head"><div class="sec-title">Recommendations</div><div class="sec-more" style="font-size:18px;color:rgba(255,255,255,0.45);cursor:pointer;line-height:1">›</div></div>
+      <div class="cards-row">
+        <div class="ecard" onclick="enterWatch(0)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">744 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">What to watch tonight</div>
+                <div class="esub">Camila</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ecard" onclick="enterWatch(2)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">531 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Hidden gems of 2024</div>
+                <div class="esub">Pablo</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ecard" onclick="enterWatch(3)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/qPDpS9SlzQ0?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">418 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=32" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">K-Drama starter pack</div>
+                <div class="esub">Sara</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ecard" onclick="enterWatch(1)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">305 viewers</div></div>
+          <div class="einfo">
+            <div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px">
+              <span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span>
+              <div style="min-width:0;flex:1">
+                <div class="etitle" style="margin-bottom:1px">Must-see classics</div>
+                <div class="esub">Isabela</div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <div class="nav-bar">
       <div class="nitem"><div class="nicon on"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="6" height="6" rx="1.5" fill="#378ADD"/><rect x="10" y="2" width="6" height="6" rx="1.5" fill="#378ADD"/><rect x="2" y="10" width="6" height="6" rx="1.5" fill="#378ADD"/><rect x="10" y="10" width="6" height="6" rx="1.5" fill="#378ADD"/></svg></div><div class="nlabel on">Home</div></div>
