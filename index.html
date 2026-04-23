@@ -336,8 +336,9 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
       </div>
 
       <!-- TODAY'S CINEMA -->
-      <div style="padding:12px 16px 2px;cursor:pointer" onclick="enterWatch(0)">
-        <div style="position:relative;border-radius:16px;overflow:hidden;height:148px">
+      <div class="sec-head" style="margin-top:14px"><div class="sec-title">Today's Cinema</div></div>
+      <div style="padding:0 16px 8px;cursor:pointer" onclick="enterWatch(0)">
+        <div style="position:relative;border-radius:16px;overflow:hidden;height:110px">
           <img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201809/2/9/295774279a25728a1aba34ad90cab6ef.jpg&mode=FILL&width=800&height=400&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.2) 55%,transparent 100%)"></div>
           <div style="position:absolute;top:8px;left:12px;background:rgba(255,255,255,0.15);border:0.5px solid rgba(255,255,255,0.3);border-radius:6px;padding:3px 8px;font-size:9px;font-weight:600;color:#fff;letter-spacing:.04em">TODAY'S CINEMA</div>
@@ -349,6 +350,20 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
               <span style="font-size:11px;font-weight:600;color:#fff">Watch Now</span>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="cards-row">
+        <div class="ecard" onclick="enterWatch(0)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/BjA995dP_60?autoplay=1&mute=1&controls=1&rel=0&start=30" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">1.2K viewers</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=47" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=11" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover;margin-left:-6px"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Watching together 🎬</div><div class="esub">Isabela, Pablo</div><div class="format-chips"><span class="tag-chip">#brasil</span></div></div></div></div>
+        </div>
+        <div class="ecard" onclick="enterWatch(1)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/ya8blp8zs_w?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">874 viewers</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=15" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Live watch party 🍿</div><div class="esub">Mateo</div><div class="format-chips"><span class="tag-chip">#classic</span></div></div></div></div>
+        </div>
+        <div class="ecard" onclick="enterWatch(2)">
+          <div class="ethumb ethumb-static" style="position:relative"><iframe src="https://www.youtube.com/embed/GDv8Iei3h4Y?autoplay=1&mute=1&controls=1&rel=0&start=10" allow="autoplay; encrypted-media" style="width:100%;height:100%;border:none;display:block;pointer-events:none"></iframe><div class="live-pip"><div class="live-dot"></div>LIVE</div><div class="viewer-count-pip">610 viewers</div></div>
+          <div class="einfo"><div style="display:flex;align-items:flex-start;gap:7px;margin-top:6px"><span style="display:inline-flex;align-items:center;flex-shrink:0"><img src="https://i.pravatar.cc/30?img=20" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover"><img src="https://i.pravatar.cc/30?img=5" alt="" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #0d0d0d;flex-shrink:0;object-fit:cover;margin-left:-6px"></span><div style="min-width:0;flex:1"><div class="etitle" style="margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Watch with us 🌀</div><div class="esub">Camila, Diego</div><div class="format-chips"><span class="tag-chip">#scifi</span></div></div></div></div>
         </div>
       </div>
 
@@ -558,18 +573,6 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
 
       <div class="sec-divider"></div>
 
-      <!-- ⑦ TRENDING CLIPS -->
-      <div class="sec-head"><div class="sec-title">Trending Clips</div><div class="sec-more">›</div></div>
-      <div class="clips-row">
-        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=47" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:47</div></div><div class="clip-info"><div class="clip-title">Isabela loses it at this scene</div><div class="clip-views">128K views</div></div></div>
-        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=11" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">1:02</div></div><div class="clip-info"><div class="clip-title">Pablo's take on the ending</div><div class="clip-views">94K views</div></div></div>
-        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=32" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:33</div></div><div class="clip-info"><div class="clip-title">Chat goes wild — 1,200 reacting</div><div class="clip-views">71K views</div></div></div>
-        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=20" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:58</div></div><div class="clip-info"><div class="clip-title">First timer vs 10x watcher</div><div class="clip-views">55K views</div></div></div>
-        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=15" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">1:14</div></div><div class="clip-info"><div class="clip-title">That twist no one saw coming</div><div class="clip-views">43K views</div></div></div>
-      </div>
-
-      <div class="sec-divider"></div>
-
       <!-- ⑧ MOVIES -->
       <div class="sec-head"><div class="sec-title">In Theater</div><div class="sec-more">›</div></div>
       <div class="poster-row">
@@ -579,6 +582,16 @@ body{background:#111;display:flex;justify-content:center;align-items:flex-start;
         <div class="poster-card" onclick="enterWatch(3)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/202008/d/a/da74b18f3e3d48f3b04f178488c9292a.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Parasite</div></div>
         <div class="poster-card" onclick="enterWatch(4)"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201912/5/6/5663a8ff57aba15eb349b4fa6b48b611.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Wild Tales</div></div>
         <div class="poster-card"><div class="poster-img"><img src="https://img.peliplat.com/api/resize/v1?imagePath=std/201810/7/e/7e531ff9258febff0fa872887096e72c.jpg&mode=FILL&width=400&height=600&limit=false&c=1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:10px"></div><div class="poster-title">Roma</div></div>
+      </div>
+
+      <!-- ⑦ TRENDING CLIPS -->
+      <div class="sec-head"><div class="sec-title">Trending Clips</div><div class="sec-more">›</div></div>
+      <div class="clips-row">
+        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=47" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:47</div></div><div class="clip-info"><div class="clip-title">Isabela loses it at this scene</div><div class="clip-views">128K views</div></div></div>
+        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=11" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">1:02</div></div><div class="clip-info"><div class="clip-title">Pablo's take on the ending</div><div class="clip-views">94K views</div></div></div>
+        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=32" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:33</div></div><div class="clip-info"><div class="clip-title">Chat goes wild — 1,200 reacting</div><div class="clip-views">71K views</div></div></div>
+        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=20" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">0:58</div></div><div class="clip-info"><div class="clip-title">First timer vs 10x watcher</div><div class="clip-views">55K views</div></div></div>
+        <div class="clip-card"><div class="clip-thumb"><img src="https://i.pravatar.cc/200?img=15" alt=""><div class="clip-play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 2.5l11 6.5-11 6.5V2.5z" fill="#fff"/></svg></div><div class="clip-duration">1:14</div></div><div class="clip-info"><div class="clip-title">That twist no one saw coming</div><div class="clip-views">43K views</div></div></div>
       </div>
 
       <div class="sec-divider"></div>
